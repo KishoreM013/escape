@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://uor2u1g77q7m"]
+
+[ext_resource type="PackedScene" uid="uid://bnumkgqwrimxr" path="res://assets/models/props/grass-plant.glb" id="1_oeo4g"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_color = Color(0.24473444, 0.11949041, 0.016232397, 1)
+
+[node name="plant" type="Node3D" unique_id=1267224950]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1119130306]
+use_collision = true
+mesh = SubResource("CylinderMesh_q7v43")
+material = SubResource("StandardMaterial3D_u4w4k")
+
+[node name="grass-plant2" parent="." unique_id=1255965451 instance=ExtResource("1_oeo4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="grass-plant3" parent="." unique_id=1208928880 instance=ExtResource("1_oeo4g")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.7, 0)

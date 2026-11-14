@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://di57wkngty806"]
+
+[ext_resource type="PackedScene" uid="uid://f53ev7qpbjal" path="res://scenes/props/components/painting_frames/painting_frame_small.tscn" id="1_4ikbc"]
+[ext_resource type="Texture2D" uid="uid://byqxlyvhi54we" path="res://assets/textures/paintings/spider-man-image.jpg" id="2_nteq1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_nteq1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 4.5, 3)
+
+[node name="painting-spider-man" type="Node3D" unique_id=877459766]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_4ikbc")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=321837386]
+mesh = SubResource("BoxMesh_q7v43")

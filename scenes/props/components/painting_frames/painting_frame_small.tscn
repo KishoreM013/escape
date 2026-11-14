@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://f53ev7qpbjal"]
+
+[ext_resource type="Texture2D" uid="uid://bmrucuuk3wg8p" path="res://assets/textures/paintings/painting-frame.webp" id="1_4fr17"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xiiso"]
+size = Vector3(0.5, 5, 3.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_438dd"]
+albedo_texture = ExtResource("1_4fr17")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(0.2, 4.5, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+
+[node name="painting-frame" type="CSGMesh3D" unique_id=143962330]
+mesh = SubResource("BoxMesh_xiiso")
+material = SubResource("StandardMaterial3D_438dd")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1969550660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")
+material = SubResource("StandardMaterial3D_u4w4k")

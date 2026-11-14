@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bmyq3abc7ep3k"]
+
+[ext_resource type="PackedScene" uid="uid://mjwlwlmog8o4" path="res://scenes/props/components/painting_frames/painting_frame_medium.tscn" id="1_txwov"]
+[ext_resource type="Texture2D" uid="uid://dm32gwljgxqr3" path="res://assets/textures/paintings/cat/giga-cat-images.jpg" id="2_u6joc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_u6joc")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+uv1_offset = Vector3(0.8, 0.15, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 6, 6)
+
+[node name="painting-giga-cat" type="Node3D" unique_id=144901529]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_txwov")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=481511255]
+mesh = SubResource("BoxMesh_q7v43")

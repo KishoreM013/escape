@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c8piogiorcswb"]
+
+[ext_resource type="PackedScene" uid="uid://cld2rmvar4wj" path="res://scenes/building-materials/components/elevator-components/elevator-moving-platform.tscn" id="1_rbqis"]
+[ext_resource type="PackedScene" uid="uid://ble8msvmn8w45" path="res://scenes/building-materials/components/elevator-components/elevator_side_wall.tscn" id="3_jqqpe"]
+[ext_resource type="PackedScene" uid="uid://dop04vq3h2r7w" path="res://scenes/building-materials/components/elevator-components/elevator_mirror.tscn" id="3_rmfsc"]
+
+[node name="Elevator" type="Node3D" unique_id=743353694]
+
+[node name="elevator-moving-patform" parent="." unique_id=1793947111 instance=ExtResource("1_rbqis")]
+
+[node name="elevator-ring" type="Node3D" parent="." unique_id=209676487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="elevator-side-wall" parent="elevator-ring" unique_id=462645250 instance=ExtResource("3_jqqpe")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 30, 5)
+
+[node name="elevator-side-wall2" parent="elevator-ring" unique_id=959001244 instance=ExtResource("3_jqqpe")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 30, -5)
+
+[node name="elevator-side-wall3" parent="elevator-ring" unique_id=370340909 instance=ExtResource("3_jqqpe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 30, 0)
+
+[node name="elevator-side-mirror" type="Node3D" parent="." unique_id=616660297]
+
+[node name="elevator-mirror" parent="elevator-side-mirror" unique_id=824410353 instance=ExtResource("3_rmfsc")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 3.5, 36, 3.5)
+
+[node name="elevator-mirror2" parent="elevator-side-mirror" unique_id=1177209498 instance=ExtResource("3_rmfsc")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 3.5, 36, -3.5)
+
+[node name="elevator-mirror3" parent="elevator-side-mirror" unique_id=1623277577 instance=ExtResource("3_rmfsc")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -3.5, 36, -3.5)
+
+[node name="elevator-mirror4" parent="elevator-side-mirror" unique_id=244100415 instance=ExtResource("3_rmfsc")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -3.5, 36, 3.5)

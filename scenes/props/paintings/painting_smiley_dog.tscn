@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://qalau8sg1cbp"]
+
+[ext_resource type="PackedScene" uid="uid://f53ev7qpbjal" path="res://scenes/props/components/painting_frames/painting_frame_small.tscn" id="1_mujfi"]
+[ext_resource type="Texture2D" uid="uid://dconc1ith5w0y" path="res://assets/textures/paintings/dog/dog-funny-1.jpg" id="2_of2c8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_of2c8")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+uv1_offset = Vector3(0.8, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 4.5, 3)
+
+[node name="painting-smiley-dog" type="Node3D" unique_id=561810726]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_mujfi")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=368648353]
+mesh = SubResource("BoxMesh_q7v43")

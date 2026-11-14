@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c5ij0fkhkym7u"]
+
+[ext_resource type="PackedScene" uid="uid://cocu85vs41usx" path="res://assets/models/props/ship-wreck.glb" id="1_wbqnb"]
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="2_sjxso"]
+[ext_resource type="Texture2D" uid="uid://cg88mn0d0s4uu" path="res://assets/textures/paintings/wooden-wall-image.jpg" id="3_nqrsj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8kob"]
+albedo_texture = ExtResource("2_sjxso")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_76mu3"]
+albedo_texture = ExtResource("3_nqrsj")
+
+[node name="prop-ship-wreck" type="Node3D" unique_id=1252710369]
+
+[node name="ship-wreck2" parent="." unique_id=1656560240 instance=ExtResource("1_wbqnb")]
+transform = Transform3D(0.82609826, 0.56352603, 0, -0.56352603, 0.82609826, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="ship-wreck" parent="ship-wreck2" index="0" unique_id=1008787391]
+material_override = SubResource("StandardMaterial3D_o8kob")
+
+[node name="sail-a" parent="ship-wreck2/ship-wreck" index="10" unique_id=656829186]
+material_override = SubResource("StandardMaterial3D_76mu3")
+
+[editable path="ship-wreck2"]

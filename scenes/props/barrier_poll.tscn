@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c4lwfff2t5s16"]
+
+[ext_resource type="Texture2D" uid="uid://d2kcg3xjv121s" path="res://assets/textures/paintings/giga-chad-image-1.jpg" id="1_gmn88"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="2_wdw0d"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7v43"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("1_gmn88")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+material = SubResource("StandardMaterial3D_nwie6")
+height = 4.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 3.897705
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_wdw0d")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+top_radius = 0.7080078
+bottom_radius = 0.7080078
+height = 0.79833984
+
+[node name="barrier_poll" type="RigidBody3D" unique_id=204310614]
+physics_material_override = SubResource("PhysicsMaterial_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1228203864]
+use_collision = true
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1770913673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025024414, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1978792944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5913086, 0)
+mesh = SubResource("CylinderMesh_q7v43")

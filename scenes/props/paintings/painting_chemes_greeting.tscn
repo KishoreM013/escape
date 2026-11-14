@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bnjt1qwv73rsu"]
+
+[ext_resource type="PackedScene" uid="uid://mjwlwlmog8o4" path="res://scenes/props/components/painting_frames/painting_frame_medium.tscn" id="1_ksrlv"]
+[ext_resource type="Texture2D" uid="uid://bc0pjgutw7r1c" path="res://assets/textures/paintings/dog/chemes-dog-1.jpg" id="2_ts3x7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_ts3x7")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.5, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 5.5, 5.5)
+
+[node name="painting-chemes-greeting" type="Node3D" unique_id=1856607658]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_ksrlv")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=922516417]
+mesh = SubResource("BoxMesh_q7v43")

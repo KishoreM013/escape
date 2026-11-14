@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ble8msvmn8w45"]
+
+[ext_resource type="Texture2D" uid="uid://c0djdejhoeis7" path="res://assets/textures/construction-metrials/marble-stone.jpg" id="1_y4srk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nwie6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(0.5, 72, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiiso"]
+albedo_color = Color(0.39095366, 0.36896315, 0.14522657, 1)
+albedo_texture = ExtResource("1_y4srk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_xiiso")
+size = Vector3(0.5, 72, 4)
+
+[node name="elevator-side-wall" type="StaticBody3D" unique_id=462645250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36, 0)
+physics_material_override = SubResource("PhysicsMaterial_nwie6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=882517021]
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1877806124]
+mesh = SubResource("BoxMesh_u4w4k")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dksdxk2iws1g8"]
+
+[ext_resource type="PackedScene" uid="uid://dsybdkiu7ssej" path="res://scenes/props/rope-strucutre.tscn" id="1_qkcay"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u4w4k"]
+height = 24.224976
+
+[node name="rope" type="RigidBody3D" unique_id=1592087267]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=509751689]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.0094604, -8.78363e-08, 0)
+shape = SubResource("CapsuleShape3D_u4w4k")
+
+[node name="rope-structure" parent="." unique_id=980243702 instance=ExtResource("1_qkcay")]

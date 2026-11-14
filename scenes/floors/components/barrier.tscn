@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dhto2d0k254ub"]
+
+[ext_resource type="Texture2D" uid="uid://24vs828r2j4h" path="res://assets/textures/construction-metrials/fence-image.jpg" id="1_qp78i"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_q7v43"]
+radius = 1.0
+radial_steps = 20
+sections = 10
+section_length = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yam7j"]
+albedo_texture = ExtResource("1_qp78i")
+uv1_offset = Vector3(0.3, 0.5, 0)
+uv1_triplanar = true
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_u4w4k"]
+radius = 0.99
+radial_steps = 20
+
+[node name="barrier" type="CSGMesh3D" unique_id=50179806]
+use_collision = true
+mesh = SubResource("TubeTrailMesh_q7v43")
+material = SubResource("StandardMaterial3D_yam7j")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1580003825]
+operation = 2
+mesh = SubResource("TubeTrailMesh_u4w4k")

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://stpbp8on3u76"]
+
+[ext_resource type="Texture2D" uid="uid://suqcmkhqkkg0" path="res://assets/textures/furnitures/welcome-table-texture.jpg" id="1_w2cql"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_u4w4k"]
+radius = 1.0
+radial_steps = 20
+section_length = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fjwa"]
+albedo_texture = ExtResource("1_w2cql")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_w2cql"]
+radial_steps = 20
+section_length = 0.1
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_p67wl"]
+radius = 0.8
+radial_steps = 20
+section_length = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(2, 1, 0.5)
+
+[node name="round-table" type="CSGMesh3D" unique_id=1114444706]
+use_collision = true
+mesh = SubResource("TubeTrailMesh_u4w4k")
+material = SubResource("StandardMaterial3D_0fjwa")
+
+[node name="round-table" type="CSGMesh3D" parent="." unique_id=751472934]
+operation = 2
+mesh = SubResource("TubeTrailMesh_w2cql")
+
+[node name="round-table2" type="CSGMesh3D" parent="." unique_id=2008248541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.035608828, 0)
+operation = 2
+mesh = SubResource("TubeTrailMesh_p67wl")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=751218522]
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")

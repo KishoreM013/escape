@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cld2rmvar4wj"]
+
+[ext_resource type="Script" uid="uid://cdmw645fmla85" path="res://scripts/elevator_moving_platform.gd" id="1_efpjl"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="2_bh7fe"]
+[ext_resource type="PackedScene" uid="uid://dlmlo3m3wsytq" path="res://scenes/building-materials/components/elevator-components/elevator_door.tscn" id="3_ug5jp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 0.5
+radius = 5.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qes5v"]
+top_radius = 5.2
+bottom_radius = 5.2
+height = 0.5
+radial_segments = 100
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6isn4"]
+albedo_texture = ExtResource("2_bh7fe")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc7v2"]
+albedo_texture = ExtResource("2_bh7fe")
+uv1_scale = Vector3(5, 5, 5)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_31k0u"]
+height = 12.116418
+radius = 3.7695313
+
+[node name="elevator-moving-platform" type="StaticBody3D" unique_id=1793947111]
+script = ExtResource("1_efpjl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1100780014]
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1040477629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0053755045, 0.0018668175, 0.009495854)
+mesh = SubResource("CylinderMesh_qes5v")
+material = SubResource("StandardMaterial3D_6isn4")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=858008070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+mesh = SubResource("CylinderMesh_qes5v")
+material = SubResource("StandardMaterial3D_wc7v2")
+
+[node name="elevator-door" parent="." unique_id=2107742513 instance=ExtResource("3_ug5jp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4.5, 0)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1840455839]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1253765645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.06756, 0.028992176)
+shape = SubResource("CylinderShape3D_31k0u")

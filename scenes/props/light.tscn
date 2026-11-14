@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b6t5ehyxsy7y4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5tjx"]
+albedo_color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_q7v43"]
+material = SubResource("StandardMaterial3D_l5tjx")
+
+[node name="light" type="Node3D" unique_id=1403043591]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1152382713]
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_size = 1.0
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=365600328]
+mesh = SubResource("SphereMesh_q7v43")

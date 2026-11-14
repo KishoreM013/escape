@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bk2tfvvy5ggqn"]
+
+[ext_resource type="PackedScene" uid="uid://mjwlwlmog8o4" path="res://scenes/props/components/painting_frames/painting_frame_medium.tscn" id="1_33bvi"]
+[ext_resource type="Texture2D" uid="uid://bahlef8e7ihwk" path="res://assets/textures/paintings/stewie-images.png" id="2_yf7sa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_yf7sa")
+uv1_scale = Vector3(2.3, 2.3, 2.3)
+uv1_offset = Vector3(0.35, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 5.5, 6)
+
+[node name="painting-sstewie" type="Node3D" unique_id=1018164480]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_33bvi")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1843896118]
+mesh = SubResource("BoxMesh_q7v43")

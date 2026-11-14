@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://tj2e4nhlxb1a"]
+
+[ext_resource type="PackedScene" uid="uid://b5yp174byee8e" path="res://scenes/building-materials/components/floor.tscn" id="1_hvabj"]
+[ext_resource type="PackedScene" uid="uid://dur3isu5rrj53" path="res://scenes/props/statue.tscn" id="2_hvabj"]
+[ext_resource type="PackedScene" uid="uid://fnjgxbxqbksc" path="res://scenes/floors/components/wall_125.tscn" id="3_p6d7o"]
+[ext_resource type="PackedScene" uid="uid://dagy5ens555wp" path="res://scenes/floors/components/wall_175.tscn" id="4_f8625"]
+[ext_resource type="PackedScene" uid="uid://cvfdfk7lc06ty" path="res://scenes/props/paintings/painting-adolf-hitler.tscn" id="5_up0yu"]
+[ext_resource type="PackedScene" uid="uid://bike72ny04k0b" path="res://scenes/props/paintings/painting_ape_to_pc.tscn" id="6_lesct"]
+[ext_resource type="PackedScene" uid="uid://dggap5riwui0x" path="res://scenes/furnitures/chair.tscn" id="7_84ty1"]
+[ext_resource type="PackedScene" uid="uid://dex3n4htc8uyu" path="res://scenes/furnitures/components/window.tscn" id="8_2tbjo"]
+[ext_resource type="PackedScene" uid="uid://bfoh17b16cca5" path="res://scenes/furnitures/components/shelf_round.tscn" id="9_mjhff"]
+[ext_resource type="PackedScene" uid="uid://c5ij0fkhkym7u" path="res://scenes/props/prop_ship_wreck.tscn" id="10_aljvu"]
+[ext_resource type="PackedScene" uid="uid://bvr2vqfv7vwcf" path="res://scenes/appliance/ac.tscn" id="11_jqot6"]
+[ext_resource type="PackedScene" uid="uid://e8wd83xxbmlm" path="res://scenes/furnitures/welcome_name.tscn" id="12_c4d1a"]
+[ext_resource type="PackedScene" uid="uid://dhto2d0k254ub" path="res://scenes/floors/components/barrier.tscn" id="13_yam7j"]
+[ext_resource type="PackedScene" uid="uid://stpbp8on3u76" path="res://scenes/furnitures/round_table.tscn" id="14_5hqkx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(0.5, 4, 8)
+
+[node name="ground_floor" type="Node3D" unique_id=1091627154]
+
+[node name="floor" parent="." unique_id=1945902289 instance=ExtResource("1_hvabj")]
+
+[node name="statue" parent="." unique_id=1296159895 instance=ExtResource("2_hvabj")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -18.869446, 1.5, -41.821)
+
+[node name="wall" type="Node3D" parent="." unique_id=1036280165]
+
+[node name="wall-x" parent="wall" unique_id=252156956 instance=ExtResource("3_p6d7o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6, 87.5)
+
+[node name="wall-x2" parent="wall" unique_id=914760156 instance=ExtResource("3_p6d7o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6, -87.5)
+
+[node name="wall_175" parent="wall" unique_id=1524504558 instance=ExtResource("4_f8625")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.5, 6, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="wall/wall_175" unique_id=70112984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.506, -5)
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="window" parent="wall/wall_175" unique_id=696658842 instance=ExtResource("8_2tbjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -7)
+
+[node name="window2" parent="wall/wall_175" unique_id=606184731 instance=ExtResource("8_2tbjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, -3)
+
+[node name="wall_175-1" parent="wall" unique_id=1636521078 instance=ExtResource("4_f8625")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.583, 6, 0)
+
+[node name="painting" type="Node3D" parent="." unique_id=669293025]
+
+[node name="painting2" parent="painting" unique_id=171431721 instance=ExtResource("5_up0yu")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 62, 5, 30)
+
+[node name="painting_ape-to-pc" parent="painting" unique_id=985218223 instance=ExtResource("6_lesct")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 62, 5, -45.519)
+
+[node name="shelf-round" parent="." unique_id=496934144 instance=ExtResource("9_mjhff")]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 53.070225, 0.39065552, 14.0190735)
+
+[node name="prop-ship-wreck" parent="." unique_id=1252710369 instance=ExtResource("10_aljvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.76274, 0.96296144, 65.26822)
+
+[node name="barrier2" parent="prop-ship-wreck" unique_id=50179806 instance=ExtResource("13_yam7j")]
+transform = Transform3D(7, 0, 2.4868996e-14, 0, 7, 0, -2.4868996e-14, 0, 7, 1.5876441, -1.7909038, -0.45636368)
+
+[node name="appliances" type="Node3D" parent="." unique_id=1389148733]
+
+[node name="ac" parent="appliances" unique_id=1601579575 instance=ExtResource("11_jqot6")]
+transform = Transform3D(-2, 0, 1.7484555e-07, 0, 2, 0, -1.7484555e-07, 0, -2, -16.067322, 9.093852, 85.95139)
+
+[node name="welcome_name" parent="." unique_id=978800106 instance=ExtResource("12_c4d1a")]
+transform = Transform3D(-8.742278e-07, 0, 20, 0, 20, 0, -20, 0, -8.742278e-07, -61.961174, 4.9230156, 0)
+
+[node name="barrier" type="Node3D" parent="." unique_id=1892759344]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.3377113, 4.9942703, 47.56791)
+
+[node name="round-table" parent="." unique_id=1114444706 instance=ExtResource("14_5hqkx")]
+transform = Transform3D(-2.1855695e-07, 0, 5, 0, 5, 0, -5, 0, -2.1855695e-07, -24.577637, 1, 0)
+
+[node name="chair" parent="round-table" unique_id=1942027443 instance=ExtResource("7_84ty1")]
+transform = Transform3D(-0.13782588, 0, 0.26646578, 0, 0.3, 0, -0.26646578, 0, -0.13782588, 0.015863795, 0, 0.13970995)

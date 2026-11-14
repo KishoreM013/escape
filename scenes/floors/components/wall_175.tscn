@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dagy5ens555wp"]
+
+[ext_resource type="Texture2D" uid="uid://c486mo60172df" path="res://assets/textures/props/brick-wall.jpg" id="1_wut1i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_be7lr"]
+size = Vector3(0.5, 12, 175)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wut1i"]
+albedo_texture = ExtResource("1_wut1i")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[node name="wall_175" type="CSGMesh3D" unique_id=1524504558]
+use_collision = true
+mesh = SubResource("BoxMesh_be7lr")
+material = SubResource("StandardMaterial3D_wut1i")

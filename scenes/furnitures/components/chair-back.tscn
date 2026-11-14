@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://pv7okkkeasp3"]
+
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="1_4fp0e"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="2_0twhv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4swrc"]
+albedo_texture = ExtResource("1_4fp0e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_4swrc")
+size = Vector3(0.1, 0.8, 0.8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01rxq"]
+albedo_texture = ExtResource("2_0twhv")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+material = SubResource("StandardMaterial3D_01rxq")
+radius = 0.053710938
+
+[node name="chair-back" type="CSGMesh3D" unique_id=1101034499]
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1424199429]
+transform = Transform3D(0.9430639, 0, 0, 0, 0.64732456, 0, 0, 0, 0.56367284, 0, 0, 0)
+operation = 2
+mesh = SubResource("BoxMesh_u4w4k")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=2052446224]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1422667249]
+transform = Transform3D(0.4174055, 0, 0, 0, 0.37707466, 0, 0, 0, 0.18876034, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D" unique_id=1676377922]
+transform = Transform3D(0.4174055, 0, 0, 0, 0.37707466, 0, 0, 0, 0.18876034, 0, 0, 0.16)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D" unique_id=748919844]
+transform = Transform3D(0.4174055, 0, 0, 0, 0.37707466, 0, 0, 0, 0.18876034, 0, 0, -0.16)
+mesh = SubResource("CapsuleMesh_q7v43")

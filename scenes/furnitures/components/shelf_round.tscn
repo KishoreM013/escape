@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bfoh17b16cca5"]
+
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="1_65rog"]
+[ext_resource type="Texture2D" uid="uid://dx5n440a6w2gk" path="res://assets/textures/paintings/shiny-marble-base.jpg" id="2_quvhg"]
+[ext_resource type="Texture2D" uid="uid://cg88mn0d0s4uu" path="res://assets/textures/paintings/wooden-wall-image.jpg" id="3_yjbus"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqot6"]
+albedo_texture = ExtResource("1_65rog")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_jqot6")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aljvu"]
+albedo_texture = ExtResource("2_quvhg")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_aljvu")
+top_radius = 2.0
+bottom_radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4d1a"]
+albedo_texture = ExtResource("3_yjbus")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yuii0"]
+material = SubResource("StandardMaterial3D_c4d1a")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hqkx"]
+albedo_texture = ExtResource("1_65rog")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m7nrh"]
+material = SubResource("StandardMaterial3D_5hqkx")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 8.025879
+radius = 2.159668
+
+[node name="shelf-round" type="Node3D" unique_id=496934144]
+
+[node name="center-poll" type="MeshInstance3D" parent="." unique_id=1693912814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1262706542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_u4w4k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1619494216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_yuii0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=191226420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("CylinderMesh_m7nrh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1338463074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+mesh = SubResource("CylinderMesh_m7nrh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=414544131]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1409466263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.237948, 0)
+shape = SubResource("CylinderShape3D_q7v43")

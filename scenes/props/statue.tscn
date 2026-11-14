@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dur3isu5rrj53"]
+
+[ext_resource type="PackedScene" uid="uid://bav6s638wpyka" path="res://scenes/props/components/statue_platform.tscn" id="1_xr6pn"]
+[ext_resource type="PackedScene" uid="uid://bl4cs8o2wdndg" path="res://assets/models/props/flag-pirate.glb" id="2_xr6pn"]
+[ext_resource type="PackedScene" uid="uid://uor2u1g77q7m" path="res://scenes/props/plant.tscn" id="3_avjwt"]
+
+[node name="statue" type="Node3D" unique_id=1296159895]
+
+[node name="statue-platform" parent="." unique_id=2014512770 instance=ExtResource("1_xr6pn")]
+
+[node name="flag-pirate2" parent="." unique_id=432883677 instance=ExtResource("2_xr6pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="plants" type="Node3D" parent="." unique_id=1733332060]
+
+[node name="plant" parent="plants" unique_id=1267224950 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.007342696, -0.25, 1)
+
+[node name="plant" parent="." unique_id=586932667 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.7, -0.25, 0.7)
+
+[node name="plant2" parent="." unique_id=1103039837 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.7, -0.25, 0.7)
+
+[node name="plant3" parent="." unique_id=1016230928 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.7, -0.25, -0.7)
+
+[node name="plant4" parent="." unique_id=284969808 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.7, -0.25, -0.7)
+
+[node name="plant5" parent="." unique_id=568839830 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.25, -1)
+
+[node name="plant6" parent="." unique_id=264112757 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, -0.25, 0)
+
+[node name="plant7" parent="." unique_id=1588526989 instance=ExtResource("3_avjwt")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1, -0.25, 0)

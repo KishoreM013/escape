@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dlmlo3m3wsytq"]
+
+[ext_resource type="Script" uid="uid://4khj6fhdumh8" path="res://scripts/door.gd" id="1_cjny7"]
+[ext_resource type="Texture2D" uid="uid://c0djdejhoeis7" path="res://assets/textures/construction-metrials/marble-stone.jpg" id="2_y2vug"]
+[ext_resource type="Texture2D" uid="uid://ctdc5fo14poan" path="res://assets/textures/construction-metrials/elevator-door-design .jpg" id="3_uaylc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32raj"]
+albedo_color = Color(1, 0.40784314, 0.26666668, 1)
+albedo_texture = ExtResource("2_y2vug")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2w1d7"]
+material = SubResource("StandardMaterial3D_32raj")
+size = Vector3(0.5, 3, 4)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nwie6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(0.5, 9, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2yeu"]
+albedo_texture = ExtResource("3_uaylc")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_r2yeu")
+size = Vector3(0.5, 9, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u4w4k"]
+size = Vector3(4, 7, 4)
+
+[node name="elevator-door" type="Node3D" unique_id=2107742513]
+script = ExtResource("1_cjny7")
+
+[node name="elevator-top-slab" type="MeshInstance3D" parent="." unique_id=82631708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("BoxMesh_2w1d7")
+
+[node name="hinge" type="Node3D" parent="." unique_id=234023474]
+
+[node name="panel" type="StaticBody3D" parent="hinge" unique_id=1986540811]
+physics_material_override = SubResource("PhysicsMaterial_nwie6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/panel" unique_id=1039355370]
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/panel" unique_id=1860496877]
+mesh = SubResource("BoxMesh_u4w4k")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=806082716]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1855949073]
+shape = SubResource("BoxShape3D_u4w4k")

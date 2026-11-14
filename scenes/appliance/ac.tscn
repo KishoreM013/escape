@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bvr2vqfv7vwcf"]
+
+[ext_resource type="Texture2D" uid="uid://bmrucuuk3wg8p" path="res://assets/textures/paintings/painting-frame.webp" id="1_kk4yi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mjd7k"]
+size = Vector3(3, 0.5, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("1_kk4yi")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.3, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(3, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiiso"]
+albedo_texture = ExtResource("1_kk4yi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 2.99
+
+[node name="ac" type="Node3D" unique_id=1601579575]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1006907639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20302212, -0.45)
+mesh = SubResource("BoxMesh_mjd7k")
+material = SubResource("StandardMaterial3D_nwie6")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1031339751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("BoxMesh_q7v43")
+material = SubResource("StandardMaterial3D_xiiso")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=309672591]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, -0.048209608, -0.3641243)
+mesh = SubResource("CylinderMesh_q7v43")

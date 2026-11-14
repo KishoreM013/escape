@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://lmidnmlmmwab"]
+
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="1_ds6i5"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="2_gdln0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpmjh"]
+albedo_texture = ExtResource("1_ds6i5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bem5"]
+albedo_texture = ExtResource("2_gdln0")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_1bem5")
+top_radius = 0.05810547
+bottom_radius = 0.05810547
+height = 0.8
+
+[node name="Chair-seat" type="Node3D" unique_id=2132830126]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=286986314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+height = 0.124572754
+material = SubResource("StandardMaterial3D_mpmjh")
+
+[node name="chair-legs" type="Node3D" parent="." unique_id=195114724]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="chair-legs" unique_id=999630663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.45, 0)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="chair-legs" unique_id=1194146673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.45, 0)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="chair-legs" unique_id=1817775072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0.4)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="chair-legs" unique_id=1267573871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.4)
+mesh = SubResource("CylinderMesh_q7v43")

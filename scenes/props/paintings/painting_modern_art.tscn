@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bc0ywyaq3s2sc"]
+
+[ext_resource type="PackedScene" uid="uid://b78886q8ykiaf" path="res://scenes/props/components/painting_frames/painting_frame_large.tscn" id="1_dwepj"]
+[ext_resource type="Texture2D" uid="uid://bddl4h2n03l3" path="res://assets/textures/paintings/modern-art-image.jpg" id="2_83sgh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_83sgh")
+uv1_scale = Vector3(1.5, 1.5, 1.5)
+uv1_offset = Vector3(-0.1, 0.2, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 6, 9.5)
+
+[node name="painting-modern-art" type="Node3D" unique_id=1926220726]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_dwepj")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=489934454]
+mesh = SubResource("BoxMesh_q7v43")

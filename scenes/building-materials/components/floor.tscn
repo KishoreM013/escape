@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b5yp174byee8e"]
+
+[ext_resource type="Texture2D" uid="uid://c0djdejhoeis7" path="res://assets/textures/construction-metrials/marble-stone.jpg" id="1_7ilb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("1_7ilb8")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(125, 1, 175)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+top_radius = 5.4
+bottom_radius = 5.4
+
+[node name="CSGMesh3D" type="CSGMesh3D" unique_id=1945902289]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=654260572]
+operation = 2
+mesh = SubResource("CylinderMesh_q7v43")

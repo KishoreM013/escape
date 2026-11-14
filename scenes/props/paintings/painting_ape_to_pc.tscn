@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bike72ny04k0b"]
+
+[ext_resource type="PackedScene" uid="uid://b78886q8ykiaf" path="res://scenes/props/components/painting_frames/painting_frame_large.tscn" id="1_mu648"]
+[ext_resource type="Texture2D" uid="uid://jqis70xqfeq3" path="res://assets/textures/paintings/Something-somewhere-went-terribly-wrong-image.jpg" id="2_dfr72"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("2_dfr72")
+uv1_scale = Vector3(0.1, 0.2, 0.1)
+uv1_offset = Vector3(3, 0.58, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_nwie6")
+size = Vector3(0.3, 5.5, 9.5)
+
+[node name="painting_ape-to-pc" type="Node3D" unique_id=985218223]
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("1_mu648")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2123424813]
+mesh = SubResource("BoxMesh_u4w4k")

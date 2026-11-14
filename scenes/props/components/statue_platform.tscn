@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bav6s638wpyka"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avjwt"]
+albedo_color = Color(0.31764707, 0.3019608, 0.16862746, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_avjwt")
+height = 1.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_doyrx"]
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ng6"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiwi8"]
+albedo_color = Color(1, 0.019607844, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0hgq5"]
+material = SubResource("StandardMaterial3D_hiwi8")
+top_radius = 0.6
+bottom_radius = 0.6
+height = 0.5
+
+[node name="statue-platform" type="CSGMesh3D" unique_id=2014512770]
+use_collision = true
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="statue-platform2" type="CSGMesh3D" parent="." unique_id=295892731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("CylinderMesh_doyrx")
+material = SubResource("StandardMaterial3D_71ng6")
+
+[node name="statue-platform" type="CSGMesh3D" parent="." unique_id=106330151]
+mesh = SubResource("CylinderMesh_0hgq5")
