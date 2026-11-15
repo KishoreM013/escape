@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cy466mf2b7mmp"]
+
+[ext_resource type="PackedScene" uid="uid://kemvajng8e2p" path="res://scenes/furnitures/components/bed_frame.tscn" id="1_3pjts"]
+[ext_resource type="PackedScene" uid="uid://dmil73euk8e7h" path="res://scenes/furnitures/components/bed_with_pillow.tscn" id="2_6is1p"]
+[ext_resource type="Texture2D" uid="uid://cpqk5bthqshdg" path="res://assets/textures/furnitures/flower-image-texture.jpg" id="3_4isge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgwkq"]
+albedo_texture = ExtResource("3_4isge")
+
+[node name="bed" type="Node3D" unique_id=1894883750]
+
+[node name="bed_frame" parent="." unique_id=1331625298 instance=ExtResource("1_3pjts")]
+
+[node name="bed_with_pillow" parent="." unique_id=813016084 instance=ExtResource("2_6is1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_mgwkq")

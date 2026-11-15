@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://du58g043gg1yy"]
+
+[ext_resource type="Texture2D" uid="uid://yl8000tw51m7" path="res://assets/textures/paintings/no-signal-iamge.jpg" id="1_ykedt"]
+[ext_resource type="PackedScene" uid="uid://b78886q8ykiaf" path="res://scenes/props/components/painting_frames/painting_frame_large.tscn" id="2_dfyq1"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="3_t52jb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("1_ykedt")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.5, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.3, 6, 9.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7v43"]
+albedo_texture = ExtResource("3_t52jb")
+
+[node name="tv" type="Node3D" unique_id=1073091049]
+
+[node name="display" type="MeshInstance3D" parent="." unique_id=1651335313]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0.00025629997)
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="painting-frame" parent="." unique_id=143962330 instance=ExtResource("2_dfyq1")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_q7v43")

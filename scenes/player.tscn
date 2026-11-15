@@ -1,14 +1,27 @@
 [gd_scene format=3 uid="uid://dm5d8a0qmm44y"]
 
 [ext_resource type="Script" uid="uid://c0u5f3872sd8l" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://st778k4kxxb2" path="res://assets/textures/paintings/cat/hitler-cat-image.jpg" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://d2kcg3xjv121s" path="res://assets/textures/paintings/giga-chad-image-1.jpg" id="3_dqkch"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7v43"]
 height = 2.5117188
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h75w6"]
+albedo_texture = ExtResource("2_qhqgy")
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+material = SubResource("StandardMaterial3D_h75w6")
 height = 2.5632324
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hmns"]
+albedo_texture = ExtResource("3_dqkch")
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.1, 0, 0)
+uv1_triplanar = true
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_7hmns")
 radius = 0.46166992
 height = 0.92333984
 
@@ -20,18 +33,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2558594, 0)
 shape = SubResource("CapsuleShape3D_q7v43")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=940761227]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2816162, 0)
+transform = Transform3D(0.953686, 0, 0.30080393, 0, 1, 0, -0.30080393, 0, 0.953686, 0, 1.2816162, 0)
 mesh = SubResource("CapsuleMesh_q7v43")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1343859605]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(0.73719174, 0, -0.6756836, 0, 1, 0, 0.6756836, 0, 0.73719174, 0, 3, 0)
 mesh = SubResource("CapsuleMesh_u4w4k")
 
 [node name="head" type="Node3D" parent="." unique_id=1168536980]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=537709342]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49334, 1.5946193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49334, 2.030221)
 
 [node name="RayCast3D" type="RayCast3D" parent="head/Camera3D" unique_id=1067123148]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46862435, -1.6129124)

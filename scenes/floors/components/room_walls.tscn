@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fp7266g4s0dp"]
+
+[ext_resource type="Texture2D" uid="uid://suqcmkhqkkg0" path="res://assets/textures/furnitures/welcome-table-texture.jpg" id="1_f4n3t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3mxs"]
+albedo_texture = ExtResource("1_f4n3t")
+
+[sub_resource type="BoxMesh" id="BoxMesh_xfub2"]
+material = SubResource("StandardMaterial3D_m3mxs")
+size = Vector3(0.5, 12, 25)
+
+[node name="room-walls" type="CSGMesh3D" unique_id=1011315535]
+use_collision = true
+mesh = SubResource("BoxMesh_xfub2")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://1ob0n6ipu77g"]
+
+[ext_resource type="PackedScene" uid="uid://dh0ji5uudam65" path="res://scenes/furnitures/components/small_circle_table.tscn" id="1_e03ka"]
+[ext_resource type="Texture2D" uid="uid://bmrucuuk3wg8p" path="res://assets/textures/paintings/painting-frame.webp" id="2_nhr1n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("2_nhr1n")
+
+[sub_resource type="PrismMesh" id="PrismMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(0.2, 0.3, 0.8)
+
+[node name="table_with_name" type="Node3D" unique_id=689643048]
+
+[node name="RigidBody3D" parent="." unique_id=409206518 instance=ExtResource("1_e03ka")]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RigidBody3D" unique_id=58811194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1537817, 0)
+mesh = SubResource("PrismMesh_q7v43")

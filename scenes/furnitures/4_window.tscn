@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0bd786pmua87"]
+
+[ext_resource type="PackedScene" uid="uid://dex3n4htc8uyu" path="res://scenes/furnitures/components/window.tscn" id="1_quhq2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(0.5, 4, 8)
+
+[node name="4_window" type="CSGMesh3D" unique_id=2077401416]
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=786215318]
+
+[node name="window" parent="Node3D" unique_id=696658842 instance=ExtResource("1_quhq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006000042, -2)
+
+[node name="window2" parent="Node3D" unique_id=1339004081 instance=ExtResource("1_quhq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006000042, 2)

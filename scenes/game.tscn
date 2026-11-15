@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://tj2e4nhlxb1a" path="res://scenes/floors/ground_floor.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://m0tendpry5yc" path="res://scenes/floors/first_floor.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm5d8a0qmm44y" path="res://scenes/player.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://cxck1jvcfdl03" path="res://scenes/floors/second_floor.tscn" id="4_iywne"]
 
 [node name="game" type="Node3D" unique_id=191775260]
 
@@ -17,8 +18,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25181723, 0)
 [node name="first_floor" parent="floors" unique_id=1905048081 instance=ExtResource("3_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.75, 0)
 
+[node name="second_floor" parent="floors" unique_id=1229451267 instance=ExtResource("4_iywne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.75, 0)
+
 [node name="player" parent="." unique_id=1521365658 instance=ExtResource("3_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.445248, 1.5000005, 0.26794434)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.084343, 0.24184489, 0.26794434)
 
 [node name="sun" type="DirectionalLight3D" parent="." unique_id=319150172]
 transform = Transform3D(-0.52663845, 0.7503845, -0.39946827, 0.054162838, 0.49857733, 0.8651514, 0.8483621, 0.43398562, -0.30321297, 0, 0, 0)

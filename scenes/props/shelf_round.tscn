@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://bfoh17b16cca5"]
+
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="1_65rog"]
+[ext_resource type="Texture2D" uid="uid://dx5n440a6w2gk" path="res://assets/textures/paintings/shiny-marble-base.jpg" id="2_quvhg"]
+[ext_resource type="Texture2D" uid="uid://cg88mn0d0s4uu" path="res://assets/textures/paintings/wooden-wall-image.jpg" id="3_yjbus"]
+[ext_resource type="PackedScene" uid="uid://bf5paxbxt4jew" path="res://assets/models/props2/plant.glb" id="4_0ec0y"]
+[ext_resource type="PackedScene" uid="uid://c28xx23k6xa8a" path="res://assets/models/props/barrel.fbx" id="4_fsgkl"]
+[ext_resource type="PackedScene" uid="uid://lccl1qlbyw81" path="res://assets/models/props/structure-roof.glb" id="4_oljys"]
+[ext_resource type="PackedScene" uid="uid://c20rquhgsgce1" path="res://assets/models/props/ship-ghost.glb" id="5_ncbkm"]
+[ext_resource type="Texture2D" uid="uid://c3hw5xf46sw2m" path="res://assets/textures/props/grass-texture.jpg" id="5_whqwa"]
+[ext_resource type="Texture2D" uid="uid://c5iu80oar8kc" path="res://assets/textures/furnitures/dark-wood-texture.jpg" id="6_c7ae6"]
+[ext_resource type="Texture2D" uid="uid://c0djdejhoeis7" path="res://assets/textures/construction-metrials/marble-stone.jpg" id="7_rsq1u"]
+[ext_resource type="PackedScene" uid="uid://lw488uf7vcl7" path="res://assets/models/props2/castle-gate.glb" id="10_0ec0y"]
+[ext_resource type="Texture2D" uid="uid://c486mo60172df" path="res://assets/textures/props/brick-wall.jpg" id="11_8aemc"]
+[ext_resource type="PackedScene" uid="uid://bxuvgl5ndvifp" path="res://assets/models/props2/castle-window.glb" id="12_7nyqg"]
+[ext_resource type="PackedScene" uid="uid://dhlm1ybdg5io6" path="res://assets/models/props2/weapon-bow.glb" id="13_whqwa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqot6"]
+albedo_texture = ExtResource("1_65rog")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_jqot6")
+top_radius = 0.3
+bottom_radius = 0.3
+height = 8.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 8.025879
+radius = 2.159668
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aljvu"]
+albedo_texture = ExtResource("2_quvhg")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_aljvu")
+top_radius = 2.0
+bottom_radius = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4d1a"]
+albedo_texture = ExtResource("3_yjbus")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yuii0"]
+material = SubResource("StandardMaterial3D_c4d1a")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hqkx"]
+albedo_texture = ExtResource("1_65rog")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m7nrh"]
+material = SubResource("StandardMaterial3D_5hqkx")
+top_radius = 2.0
+bottom_radius = 2.0
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ec0y"]
+albedo_texture = ExtResource("5_whqwa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u32eh"]
+albedo_texture = ExtResource("5_whqwa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("6_c7ae6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiiso"]
+albedo_texture = ExtResource("7_rsq1u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("3_yjbus")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mlnif"]
+albedo_texture = ExtResource("11_8aemc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioh1n"]
+albedo_texture = ExtResource("1_65rog")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ie0lu"]
+albedo_texture = ExtResource("6_c7ae6")
+
+[node name="shelf-round" type="Node3D" unique_id=496934144]
+
+[node name="center-poll" type="MeshInstance3D" parent="." unique_id=1693912814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=414544131]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1409466263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.237948, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="shelf" type="Node3D" parent="." unique_id=702923299]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shelf" unique_id=2041092514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_u4w4k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="shelf" unique_id=1173416814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("CylinderMesh_yuii0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="shelf" unique_id=1395052042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+mesh = SubResource("CylinderMesh_m7nrh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="shelf" unique_id=577763387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+mesh = SubResource("CylinderMesh_m7nrh")
+
+[node name="props" type="Node3D" parent="." unique_id=1108100756]
+
+[node name="plant2" parent="props" unique_id=162737576 instance=ExtResource("4_0ec0y")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.87759507, 6.3189545, 0.825372)
+
+[node name="plant" parent="props/plant2" index="0" unique_id=1722079495]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025471926, 0)
+material_override = SubResource("StandardMaterial3D_0ec0y")
+
+[node name="structure-roof2" parent="props" unique_id=589614296 instance=ExtResource("4_oljys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1505127, 1.3295898, 2.2276611)
+
+[node name="structure-roof" parent="props/structure-roof2" index="0" unique_id=355128014]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -3.2070923, 0.6840439, -2.5037842)
+material_override = SubResource("StandardMaterial3D_u32eh")
+
+[node name="ship-ghost2" parent="props" unique_id=542182254 instance=ExtResource("5_ncbkm")]
+transform = Transform3D(-0.07203353, 0, -0.13157193, 0, 0.15, 0, 0.13157193, 0, -0.07203353, -0.7998638, 2.0754318, 1.2173786)
+
+[node name="ship-ghost" parent="props/ship-ghost2" index="0" unique_id=1727041099]
+transform = Transform3D(0.7628896, 0, -0.6465283, 0, 0.99999994, 0, 0.6465283, 0, 0.7628896, -4.8205814, -0.57525635, 5.010143)
+material_override = SubResource("StandardMaterial3D_nwie6")
+
+[node name="sail-a" parent="props/ship-ghost2/ship-ghost" index="2" unique_id=1974852415]
+material_override = SubResource("StandardMaterial3D_xiiso")
+
+[node name="sail-b" parent="props/ship-ghost2/ship-ghost" index="3" unique_id=249472679]
+material_override = SubResource("StandardMaterial3D_xiiso")
+
+[node name="barrel" parent="props" unique_id=1452707203 instance=ExtResource("4_fsgkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0881356, 4.267273, -0.451766)
+
+[node name="barrel" parent="props/barrel" index="0" unique_id=836348869]
+material_override = SubResource("StandardMaterial3D_u4w4k")
+
+[node name="castle-gate2" parent="props" unique_id=230188468 instance=ExtResource("10_0ec0y")]
+transform = Transform3D(-0.0074807773, 0, -0.29990673, 0, 0.3, 0, 0.29990673, 0, -0.0074807773, 0.8630371, 4.1616974, 0.54326344)
+
+[node name="castle-gate" parent="props/castle-gate2" index="0" unique_id=1667543871]
+transform = Transform3D(0.9059516, 0, -0.4233813, 0, 1.0000001, 0, 0.4233813, 0, 0.9059516, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_mlnif")
+
+[node name="castle-window2" parent="props" unique_id=1372624212 instance=ExtResource("12_7nyqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7052002, 0, 10.521011)
+
+[node name="castle-window" parent="props/castle-window2" index="0" unique_id=1155376732]
+transform = Transform3D(-0.12569852, 0, -0.3797366, 0, 0.4, 0, 0.3797366, 0, -0.12569852, 1.6356201, 5.8900604, -10.807743)
+material_override = SubResource("StandardMaterial3D_ioh1n")
+
+[node name="weapon-bow2" parent="props" unique_id=269464294 instance=ExtResource("13_whqwa")]
+transform = Transform3D(2.4090295, 0, 1.7878971, 0, 3, 0, -1.7878971, 0, 2.4090295, 1.152359, 6.2268467, -0.8279114)
+
+[node name="weapon-bow" parent="props/weapon-bow2" index="0" unique_id=955246792]
+material_override = SubResource("StandardMaterial3D_ie0lu")
+
+[editable path="props/plant2"]
+[editable path="props/structure-roof2"]
+[editable path="props/ship-ghost2"]
+[editable path="props/barrel"]
+[editable path="props/castle-gate2"]
+[editable path="props/castle-window2"]
+[editable path="props/weapon-bow2"]

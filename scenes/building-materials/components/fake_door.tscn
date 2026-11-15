@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://j8iwyvbq8en2"]
+
+[ext_resource type="Texture2D" uid="uid://suqcmkhqkkg0" path="res://assets/textures/furnitures/welcome-table-texture.jpg" id="1_7hunj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nwie6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(0.5, 9, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2yeu"]
+albedo_texture = ExtResource("1_7hunj")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_r2yeu")
+size = Vector3(0.5, 9, 4)
+
+[node name="fake-door" type="Node3D" unique_id=2107742513]
+
+[node name="hinge" type="Node3D" parent="." unique_id=234023474]
+
+[node name="panel" type="StaticBody3D" parent="hinge" unique_id=1986540811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+physics_material_override = SubResource("PhysicsMaterial_nwie6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/panel" unique_id=1039355370]
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge/panel" unique_id=1860496877]
+mesh = SubResource("BoxMesh_u4w4k")

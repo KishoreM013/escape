@@ -1,5 +1,30 @@
 [gd_scene format=3 uid="uid://cche7kh7xsqwo"]
 
+[ext_resource type="PackedScene" uid="uid://b404ktsmbpqid" path="res://scenes/furnitures/components/u_shape_tops.tscn" id="1_uk60j"]
+[ext_resource type="Texture2D" uid="uid://c5iu80oar8kc" path="res://assets/textures/furnitures/dark-wood-texture.jpg" id="2_t867t"]
+[ext_resource type="Texture2D" uid="uid://cg88mn0d0s4uu" path="res://assets/textures/paintings/wooden-wall-image.jpg" id="3_t867t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_winrr"]
+albedo_texture = ExtResource("2_t867t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("3_t867t")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_nwie6")
+top_radius = 0.3
+bottom_radius = 0.6
+height = 1.090332
+
 [node name="u_shape_desk" type="Node3D" unique_id=978800106]
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=280622639]
+[node name="u_shape_tops" parent="." unique_id=1010946433 instance=ExtResource("1_uk60j")]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 1, 0, -2, -4.371139e-08, -0.18241453, 0, -0.16508687)
+use_collision = true
+material = SubResource("StandardMaterial3D_winrr")
+
+[node name="legs" type="Node3D" parent="." unique_id=922879059]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="legs" unique_id=754765319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45483398, 0)
+mesh = SubResource("CylinderMesh_u4w4k")

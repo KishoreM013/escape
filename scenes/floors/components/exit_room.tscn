@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dpy56uanmvlc5"]
+
+[ext_resource type="Texture2D" uid="uid://bbu8thkijh0m5" path="res://assets/textures/construction-metrials/room-wall-texture.jpg" id="1_a3y1j"]
+[ext_resource type="PackedScene" uid="uid://bfsd2jddncqxq" path="res://scenes/building-materials/components/door.tscn" id="2_a171h"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(6, 11.75, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a171h"]
+albedo_texture = ExtResource("1_a3y1j")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+size = Vector3(5.5, 9, 4)
+
+[node name="Exit-room" type="Node3D" unique_id=711907381]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=436334321]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+material = SubResource("StandardMaterial3D_a171h")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="CSGMesh3D" unique_id=1543965103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5050049, -0.89346313, -0.024902344)
+operation = 2
+mesh = SubResource("BoxMesh_u4w4k")
+
+[node name="door" parent="." unique_id=2107742513 instance=ExtResource("2_a171h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8496704, -0.89437103, 2.0115662)

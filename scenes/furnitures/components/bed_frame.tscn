@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://kemvajng8e2p"]
+
+[ext_resource type="Texture2D" uid="uid://suqcmkhqkkg0" path="res://assets/textures/furnitures/welcome-table-texture.jpg" id="1_plw0y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("1_plw0y")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(4, 2, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+size = Vector3(4, 1.5, 8)
+
+[node name="bed_frame" type="Node3D" unique_id=1331625298]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1190099827]
+material_override = SubResource("StandardMaterial3D_nwie6")
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGMesh3D" unique_id=1927785019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 1)
+operation = 2
+mesh = SubResource("BoxMesh_u4w4k")

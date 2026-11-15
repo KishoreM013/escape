@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://iiibsldcmtqk"]
+
+[ext_resource type="Texture2D" uid="uid://c5iu80oar8kc" path="res://assets/textures/furnitures/dark-wood-texture.jpg" id="1_lyf5s"]
+[ext_resource type="PackedScene" uid="uid://bamswu5rlitsv" path="res://scenes/furnitures/components/drawer.tscn" id="2_cqhpm"]
+[ext_resource type="PackedScene" uid="uid://ctaukkd5v2vky" path="res://scenes/furnitures/components/drawer_bottom.tscn" id="3_bg6t2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrp0d"]
+albedo_texture = ExtResource("1_lyf5s")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_mrp0d")
+size = Vector3(4, 2, 1)
+
+[node name="drawer_table" type="CSGMesh3D" unique_id=1027903129]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1405198045]
+
+[node name="drawer" parent="Node3D" unique_id=707081915 instance=ExtResource("2_cqhpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2351727, 0.45572394, 0.41729748)
+
+[node name="drawer2" parent="Node3D" unique_id=180663017 instance=ExtResource("2_cqhpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018132448, 0.45572394, 0.41729748)
+
+[node name="drawer3" parent="Node3D" unique_id=228496435 instance=ExtResource("2_cqhpm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2587848, 0.45572394, 0.41729748)
+
+[node name="drawer_bottom" parent="." unique_id=218117303 instance=ExtResource("3_bg6t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008765161, -0.43597347, 0.44019532)

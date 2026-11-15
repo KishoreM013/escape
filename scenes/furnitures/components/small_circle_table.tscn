@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dh0ji5uudam65"]
+
+[ext_resource type="Texture2D" uid="uid://cnejqefr6xl6e" path="res://assets/textures/construction-metrials/bamboo-texture-image.jpg" id="1_1m0lm"]
+[ext_resource type="Texture2D" uid="uid://cg88mn0d0s4uu" path="res://assets/textures/paintings/wooden-wall-image.jpg" id="2_1m0lm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+radius = 0.6484375
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("1_1m0lm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+top_radius = 0.6
+bottom_radius = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwie6"]
+albedo_texture = ExtResource("2_1m0lm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4l3sc"]
+material = SubResource("StandardMaterial3D_nwie6")
+top_radius = 0.2
+height = 1.0
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=409206518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=536532482]
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=368172730]
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1031043830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("CylinderMesh_4l3sc")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://uwpo6ibt40dl"]
+
+[ext_resource type="Texture2D" uid="uid://24vs828r2j4h" path="res://assets/textures/construction-metrials/fence-image.jpg" id="1_8qyhv"]
+[ext_resource type="PackedScene" uid="uid://bfsd2jddncqxq" path="res://scenes/building-materials/components/door.tscn" id="2_lfber"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(6, 11.75, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("1_8qyhv")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+size = Vector3(5.5, 9, 4)
+
+[node name="restroom" type="Node3D" unique_id=711907381]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=436334321]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+material = SubResource("StandardMaterial3D_u4w4k")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="CSGMesh3D" unique_id=1543965103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5050049, -0.89346313, -0.024902344)
+operation = 2
+mesh = SubResource("BoxMesh_u4w4k")
+
+[node name="door" parent="." unique_id=2107742513 instance=ExtResource("2_lfber")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8496704, -0.89437103, 2.0115662)
+open_angle = 0.0

@@ -9,7 +9,7 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
 material = SubResource("StandardMaterial3D_u4w4k")
-size = Vector3(125, 1, 175)
+size = Vector3(75, 1, 100)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
 top_radius = 5.4

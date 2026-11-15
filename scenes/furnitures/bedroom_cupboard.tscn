@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dik4ug0ltskop"]
+
+[ext_resource type="Texture2D" uid="uid://cnejqefr6xl6e" path="res://assets/textures/construction-metrials/bamboo-texture-image.jpg" id="1_fdrn8"]
+[ext_resource type="PackedScene" uid="uid://bamswu5rlitsv" path="res://scenes/furnitures/components/drawer.tscn" id="2_jmfcb"]
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="3_jmfcb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(1.5, 9, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7v43"]
+albedo_texture = ExtResource("1_fdrn8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(1.5, 9, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("3_jmfcb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_fho0x"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(1.6174316, 3.703125, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rwq6c"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(1.4003906, 3.6347656, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_78vfq"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(1.4807129, 3.7548828, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3860b"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(1.5371094, 3.6520996, 0.5)
+
+[node name="bedroom_cupboard" type="RigidBody3D" unique_id=789890658]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1643320089]
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="shelf" type="CSGMesh3D" parent="." unique_id=1308121214]
+material_override = SubResource("StandardMaterial3D_q7v43")
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="drawers" type="Node3D" parent="." unique_id=148936075]
+
+[node name="drawer" parent="drawers" unique_id=707081915 instance=ExtResource("2_jmfcb")]
+transform = Transform3D(-0.0016566945, 0, 0.9999986, 0, 1, 0, -0.9999986, 0, -0.0016566945, 0.62326884, -2.1767883, 0.98839974)
+mesh = SubResource("BoxMesh_fho0x")
+
+[node name="drawer2" parent="drawers" unique_id=1536248712 instance=ExtResource("2_jmfcb")]
+transform = Transform3D(-0.0016566945, 0, 0.9999986, 0, 1, 0, -0.9999986, 0, -0.0016566945, 0.6233562, -2.1767883, -0.9310737)
+mesh = SubResource("BoxMesh_rwq6c")
+
+[node name="drawer3" parent="drawers" unique_id=2125222902 instance=ExtResource("2_jmfcb")]
+transform = Transform3D(-0.0016566945, 0, 0.9999986, 0, 1, 0, -0.9999986, 0, -0.0016566945, 0.62326884, 2.0243459, 0.98839974)
+mesh = SubResource("BoxMesh_78vfq")
+
+[node name="drawer4" parent="drawers" unique_id=997931472 instance=ExtResource("2_jmfcb")]
+transform = Transform3D(-0.0016566945, 0, 0.9999986, 0, 1, 0, -0.9999986, 0, -0.0016566945, 0.6233562, 2.0243459, -0.9310737)
+mesh = SubResource("BoxMesh_3860b")

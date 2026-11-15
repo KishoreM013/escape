@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cxck1jvcfdl03"]
+
+[ext_resource type="PackedScene" uid="uid://b5yp174byee8e" path="res://scenes/building-materials/components/floor.tscn" id="1_r52nk"]
+
+[node name="second_floor" type="Node3D" unique_id=1229451267]
+
+[node name="CSGMesh3D" parent="." unique_id=1945902289 instance=ExtResource("1_r52nk")]

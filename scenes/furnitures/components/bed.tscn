@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b4k2ga2yamsu8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(4, 1, 7)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+
+[node name="bed_with_pillow" type="CSGMesh3D" unique_id=813016084]
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="pillows" type="Node3D" parent="." unique_id=1457593461]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pillows" unique_id=1652188392]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1, 0.5, -2.5)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="pillows" unique_id=797355018]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -1, 0.5, -2.5)
+mesh = SubResource("CapsuleMesh_q7v43")

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dfrnphblnxs84"]
+
+[ext_resource type="PackedScene" uid="uid://cby3k3ki1kg4l" path="res://scenes/building-materials/fence/fence_4b.tscn" id="1_nwq6u"]
+
+[node name="fence_8b" type="Node3D" unique_id=1458920471]
+
+[node name="fence_4b" parent="." unique_id=671885939 instance=ExtResource("1_nwq6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004211426, 0, 3.6197708)
+
+[node name="fence_4b2" parent="." unique_id=121859955 instance=ExtResource("1_nwq6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004211426, 0, -3.5458953)

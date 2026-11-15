@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://crv5rxoh20ltf"]
+
+[ext_resource type="Texture2D" uid="uid://dx5n440a6w2gk" path="res://assets/textures/paintings/shiny-marble-base.jpg" id="1_jf3if"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtp2l"]
+albedo_texture = ExtResource("1_jf3if")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_qtp2l")
+size = Vector3(4, 0.2, 1.5)
+
+[node name="kitchen_slab" type="CSGMesh3D" unique_id=1184473977]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")

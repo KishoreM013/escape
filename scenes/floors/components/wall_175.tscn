@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c486mo60172df" path="res://assets/textures/props/brick-wall.jpg" id="1_wut1i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_be7lr"]
-size = Vector3(0.5, 12, 175)
+size = Vector3(0.5, 12, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wut1i"]
 albedo_texture = ExtResource("1_wut1i")

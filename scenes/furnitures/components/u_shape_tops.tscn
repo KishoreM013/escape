@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b404ktsmbpqid"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7jv7g"]
+size = Vector3(1.5, 5, 0.2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+radius = 1.0
+height = 3.0
+
+[node name="u_shape_tops" type="CSGMesh3D" unique_id=1010946433]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_7jv7g")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=675399227]
+operation = 1
+mesh = SubResource("CapsuleMesh_q7v43")

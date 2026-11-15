@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dtslmpr20jro1"]
+
+[ext_resource type="Texture2D" uid="uid://cnejqefr6xl6e" path="res://assets/textures/construction-metrials/bamboo-texture-image.jpg" id="1_sd662"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wurk"]
+albedo_texture = ExtResource("1_sd662")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_8wurk")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 12.0
+
+[node name="fence_pool" type="CSGMesh3D" unique_id=1684521520]
+mesh = SubResource("CylinderMesh_u4w4k")

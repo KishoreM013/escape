@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dnfwj0gsaa3vv"]
+
+[ext_resource type="Texture2D" uid="uid://cnejqefr6xl6e" path="res://assets/textures/construction-metrials/bamboo-texture-image.jpg" id="1_ol6sm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wurk"]
+albedo_texture = ExtResource("1_ol6sm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+material = SubResource("StandardMaterial3D_8wurk")
+top_radius = 0.15
+bottom_radius = 0.15
+height = 12.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ol6sm"]
+albedo_texture = ExtResource("1_ol6sm")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q7v43"]
+material = SubResource("StandardMaterial3D_ol6sm")
+radius = 0.1
+
+[node name="fence_block" type="CSGMesh3D" unique_id=1684521520]
+use_collision = true
+mesh = SubResource("CylinderMesh_u4w4k")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1154479498]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -5, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=977151451]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -4, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="." unique_id=765987841]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -3, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="." unique_id=150923008]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -2, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="." unique_id=1062925299]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="." unique_id=275166548]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="." unique_id=1079696790]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.9815254, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="." unique_id=2064025654]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.9815254, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="." unique_id=895469480]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.9815254, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="." unique_id=1971203005]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3.9815254, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
+
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="." unique_id=2048322233]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 4.9815254, 0)
+mesh = SubResource("CapsuleMesh_q7v43")
