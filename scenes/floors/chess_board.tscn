@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ds5fnmm43kgo"]
+
+[ext_resource type="PackedScene" uid="uid://bvugp4jfpu07m" path="res://assets/models/chess.glb" id="1_ta8is"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(1, 0.5, 1)
+
+[node name="chess_board" type="RigidBody3D" unique_id=1616121643]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2110789344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2495, 0)
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="Sketchfab_Scene" parent="." unique_id=10461708 instance=ExtResource("1_ta8is")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

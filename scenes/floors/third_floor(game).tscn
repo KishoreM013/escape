@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://crww00n206cu6"]
+
+[ext_resource type="PackedScene" uid="uid://b5yp174byee8e" path="res://scenes/building-materials/components/floor.tscn" id="1_s73x7"]
+[ext_resource type="PackedScene" uid="uid://rumnu15pjm8y" path="res://scenes/floors/components/wall_x.tscn" id="2_qosn1"]
+[ext_resource type="PackedScene" uid="uid://d0bd786pmua87" path="res://scenes/furnitures/4_window.tscn" id="3_p7bx0"]
+[ext_resource type="PackedScene" uid="uid://dagy5ens555wp" path="res://scenes/floors/components/wall_175.tscn" id="4_eoupq"]
+
+[node name="third_floor(game)" type="Node3D" unique_id=1316253961]
+
+[node name="floor" parent="." unique_id=1945902289 instance=ExtResource("1_s73x7")]
+
+[node name="side-walls" type="Node3D" parent="." unique_id=1172977304]
+
+[node name="wall-x" parent="side-walls" unique_id=252156956 instance=ExtResource("2_qosn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6, -50)
+
+[node name="4_window" parent="side-walls/wall-x" unique_id=2077401416 instance=ExtResource("3_p7bx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.9999995)
+
+[node name="wall-x2" parent="side-walls" unique_id=2034552158 instance=ExtResource("2_qosn1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6, 50)
+
+[node name="wall_175" parent="side-walls" unique_id=1524504558 instance=ExtResource("4_eoupq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 6, 0)
+
+[node name="4_window" parent="side-walls/wall_175" unique_id=207636616 instance=ExtResource("3_p7bx0")]
+
+[node name="wall_176" parent="side-walls" unique_id=428869384 instance=ExtResource("4_eoupq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 6, 0)
+
+[node name="4_window" parent="side-walls/wall_176" unique_id=1824596574 instance=ExtResource("3_p7bx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -35)
