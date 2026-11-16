@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://fh0by8xlwqyi"]
+
+[ext_resource type="Texture2D" uid="uid://dgovsg44vkwjx" path="res://assets/textures/props/floor-image.jpg" id="1_qq6bx"]
+[ext_resource type="PackedScene" uid="uid://dgy1v6oopwiiy" path="res://assets/models/playing_cards.glb" id="2_00xi4"]
+[ext_resource type="PackedScene" uid="uid://dh0ji5uudam65" path="res://scenes/furnitures/components/small_circle_table.tscn" id="3_00xi4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+albedo_texture = ExtResource("1_qq6bx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+size = Vector3(2, 0.2, 3)
+
+[node name="rummy_cards" type="Node3D" unique_id=924840990]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1095255801]
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1968024202 instance=ExtResource("2_00xi4")]
+transform = Transform3D(-8.742278e-08, -2, -8.742278e-08, 0, -8.742278e-08, 2, -2, 8.742278e-08, 3.821371e-15, 0.6955474, 0.105154276, 0.036090255)
+
+[node name="RigidBody3D" parent="." unique_id=409206518 instance=ExtResource("3_00xi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

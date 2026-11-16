@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dh846a2nnncb4"]
+
+[ext_resource type="PackedScene" uid="uid://wugse60bv544" path="res://assets/models/table_tennis_table.glb" id="1_rmps5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(3, 2, 5)
+
+[node name="table_tennis" type="Node3D" unique_id=1773120608]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1216491938 instance=ExtResource("1_rmps5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1197637041]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=851688894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_q7v43")

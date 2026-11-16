@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bwmhsvnqoqvyu"]
+
+[ext_resource type="PackedScene" uid="uid://c54hkcvc6nbql" path="res://assets/models/rhyzome_plant.glb" id="1_gx4cv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 1.5
+
+[node name="new_plant" type="Node3D" unique_id=3459425]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1125966377]
+
+[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=342852425 instance=ExtResource("1_gx4cv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=391669516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_q7v43")

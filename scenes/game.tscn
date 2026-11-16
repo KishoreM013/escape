@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://m0tendpry5yc" path="res://scenes/floors/first_floor.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm5d8a0qmm44y" path="res://scenes/player.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cxck1jvcfdl03" path="res://scenes/floors/second_floor.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://crww00n206cu6" path="res://scenes/floors/third_floor(game).tscn" id="5_p57ef"]
 
 [node name="game" type="Node3D" unique_id=191775260]
 
@@ -20,6 +21,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.75, 0)
 
 [node name="second_floor" parent="floors" unique_id=1229451267 instance=ExtResource("4_iywne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.75, 0)
+
+[node name="third_floor(game)" parent="floors" unique_id=1316253961 instance=ExtResource("5_p57ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.5, 0)
 
 [node name="player" parent="." unique_id=1521365658 instance=ExtResource("3_lnu2h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.084343, 0.24184489, 0.26794434)

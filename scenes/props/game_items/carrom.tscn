@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c62m37csaxbp8"]
+
+[ext_resource type="PackedScene" uid="uid://5jje18tb71pu" path="res://assets/models/carrom_board.glb" id="1_wevff"]
+[ext_resource type="PackedScene" uid="uid://dh0ji5uudam65" path="res://scenes/furnitures/components/small_circle_table.tscn" id="2_fyuao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(5, 0.3, 5)
+
+[node name="carrom" type="Node3D" unique_id=646388163]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1032064673]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1113050890]
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="Sketchfab_Scene" parent="StaticBody3D" unique_id=76455111 instance=ExtResource("1_wevff")]
+
+[node name="RigidBody3D" parent="." unique_id=409206518 instance=ExtResource("2_fyuao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

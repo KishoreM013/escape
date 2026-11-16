@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxofytpoxx53p"]
+
+[ext_resource type="PackedScene" uid="uid://d4f80gg3t2n0q" path="res://assets/models/simple_pool_table.glb" id="1_stg0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(15, 10, 29)
+
+[node name="pool table" type="Node3D" unique_id=1735754512]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=419251493]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=649719470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1)
+shape = SubResource("BoxShape3D_q7v43")
+
+[node name="Sketchfab_Scene" parent="." unique_id=657103214 instance=ExtResource("1_stg0h")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -25, 2, 5)
