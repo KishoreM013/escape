@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://uor2u1g77q7m" path="res://scenes/props/plant.tscn" id="20_tl617"]
 [ext_resource type="PackedScene" uid="uid://uwpo6ibt40dl" path="res://scenes/building-materials/restroom.tscn" id="21_7gi2r"]
 [ext_resource type="PackedScene" uid="uid://dik4ug0ltskop" path="res://scenes/furnitures/bedroom_cupboard.tscn" id="24_v3srf"]
+[ext_resource type="PackedScene" uid="uid://bvr2vqfv7vwcf" path="res://scenes/appliance/ac.tscn" id="27_jlbvi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o61ir"]
 size = Vector3(0.5, 9, 4)
@@ -35,7 +36,7 @@ size = Vector3(0.5, 9, 4)
 albedo_texture = ExtResource("3_ckg11")
 
 [sub_resource type="BoxMesh" id="BoxMesh_ldcfj"]
-size = Vector3(0.5, 9, 4)
+size = Vector3(0.8, 9, 4)
 
 [node name="second_floor" type="Node3D" unique_id=1229451267]
 
@@ -56,6 +57,14 @@ material = SubResource("StandardMaterial3D_uonom")
 
 [node name="fake-door" parent="side-walls/room-split-walls/room-walls/CSGMesh3D" unique_id=2107742513 instance=ExtResource("4_c8yej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019209862, 0, 9.004962)
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="side-walls/room-split-walls/room-walls" unique_id=979239896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.082710266, -1.0073242, -9.009323)
+operation = 2
+mesh = SubResource("BoxMesh_ldcfj")
+
+[node name="door" parent="side-walls/room-split-walls/room-walls/CSGMesh3D2" unique_id=747320504 instance=ExtResource("5_q8gfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099965096, -0.14880371, 2.0426753)
 
 [node name="room-walls2" parent="side-walls/room-split-walls" unique_id=1070060168 instance=ExtResource("4_lqc4j")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 6, 12)
@@ -161,7 +170,7 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 [node name="cupboard" type="Node3D" parent="furnitures" unique_id=1758554191]
 
 [node name="cupboard" parent="furnitures/cupboard" unique_id=789890658 instance=ExtResource("10_xnr63")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14, 5, 11)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.96906, 5, 11.0216675)
 
 [node name="cupboard2" parent="furnitures/cupboard" unique_id=245438737 instance=ExtResource("11_psprd")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 15, 5, -43)
@@ -207,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 6, -40)
 [node name="plants" type="Node3D" parent="props" unique_id=737424407]
 
 [node name="plant7" parent="props/plants" unique_id=1267224950 instance=ExtResource("20_tl617")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0271072, 1, 11)
 
 [node name="plant" parent="props/plants" unique_id=444716017 instance=ExtResource("20_tl617")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -30)
@@ -309,6 +318,27 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5, 7, -49.5)
 
 [node name="acs" type="Node3D" parent="appliance" unique_id=2076672459]
+
+[node name="ac" parent="appliance/acs" unique_id=1601579575 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(-1.9999641, 0, -0.011990174, 0, 2, 0, 0.011990174, 0, -1.9999641, 9.468079, 8.741638, 10.322998)
+
+[node name="ac2" parent="appliance/acs" unique_id=2094912771 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(-1.9999641, 0, -0.011990174, 0, 2, 0, 0.011990174, 0, -1.9999641, -17.91043, 8.741638, 10.322998)
+
+[node name="ac3" parent="appliance/acs" unique_id=1500085777 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(-1.9999641, 0, -0.011990174, 0, 2, 0, 0.011990174, 0, -1.9999641, -6.6044006, 8.741638, -17.688843)
+
+[node name="ac4" parent="appliance/acs" unique_id=305542739 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(-1.9999641, 0, -0.011990174, 0, 2, 0, 0.011990174, 0, -1.9999641, 26.178192, 8.741638, -17.688843)
+
+[node name="ac5" parent="appliance/acs" unique_id=1466963448 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(-1.9999641, 0, -0.011990174, 0, 2, 0, 0.011990174, 0, -1.9999641, -31.27005, 8.741638, -29.994995)
+
+[node name="ac6" parent="appliance/acs" unique_id=1097315122 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(1.9999677, 0, -0.011380134, 0, 2, 0, 0.011380134, 0, 1.9999677, 7.00589, 9.193176, -48.37036)
+
+[node name="ac7" parent="appliance/acs" unique_id=1353998768 instance=ExtResource("27_jlbvi")]
+transform = Transform3D(1.9999816, 0, 0.008592453, 0, 2, 0, -0.008592453, 0, 1.9999816, 19.94104, 8.741638, -14.328247)
 
 [node name="fence_4b" parent="." unique_id=671885939 instance=ExtResource("20_se20d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -20)

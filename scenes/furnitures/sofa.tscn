@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cpqk5bthqshdg" path="res://assets/textures/furnitures/flower-image-texture.jpg" id="1_7fwtg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trtic"]
+albedo_texture = ExtResource("1_7fwtg")
+
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_u4w4k"]
 radius = 1.0
 radial_steps = 20
@@ -24,6 +27,7 @@ size = Vector3(2, 1, 0.5)
 
 [node name="sofa" type="CSGMesh3D" unique_id=1114444706]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_trtic")
 use_collision = true
 mesh = SubResource("TubeTrailMesh_u4w4k")
 material = SubResource("StandardMaterial3D_tpy1e")

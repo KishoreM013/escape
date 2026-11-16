@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dcud3yxka8k08" path="res://scenes/furnitures/sofa.tscn" id="15_pvk0c"]
 [ext_resource type="PackedScene" uid="uid://ti44fffb1qnh" path="res://scenes/props/paintings/painting_joker.tscn" id="16_d6wo6"]
 [ext_resource type="PackedScene" uid="uid://qalau8sg1cbp" path="res://scenes/props/paintings/painting_smiley_dog.tscn" id="17_ps4j8"]
+[ext_resource type="PackedScene" uid="uid://bbrqr31k7ig67" path="res://scenes/furnitures/cupboard.tscn" id="18_73qf7"]
 [ext_resource type="PackedScene" uid="uid://stpbp8on3u76" path="res://scenes/furnitures/round_table.tscn" id="19_73qf7"]
 [ext_resource type="PackedScene" uid="uid://bwmhsvnqoqvyu" path="res://scenes/props/new_plant.tscn" id="22_ky5hs"]
 [ext_resource type="PackedScene" uid="uid://uor2u1g77q7m" path="res://scenes/props/plant.tscn" id="23_73qf7"]
@@ -151,6 +152,15 @@ open_angle = -90.0
 
 [node name="room-walls" parent="store_room" unique_id=166262233 instance=ExtResource("5_p7bx0")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.611517, 0.0076351166, 12.408619)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="store_room/room-walls" unique_id=62352034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0073242, -2.7887573)
+operation = 2
+mesh = SubResource("BoxMesh_s11m0")
+
+[node name="door" parent="store_room/room-walls/CSGMesh3D" unique_id=990286046 instance=ExtResource("6_eoupq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099965096, -0.14880371, 2.0426753)
+open_angle = -90.0
 
 [node name="fence" type="Node3D" parent="." unique_id=341236298]
 
@@ -310,6 +320,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.632385, 4.7894287, -35.76
 
 [node name="bedroom_cupboard" parent="furnitures/cupboards" unique_id=1799527045 instance=ExtResource("14_qied7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.58728, 5.0715637, -30.688374)
+
+[node name="cupboard3" parent="furnitures/cupboards" unique_id=1444853117 instance=ExtResource("18_73qf7")]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, -12.226716, 5.2426147, 44.60382)
 
 [node name="sofas" type="Node3D" parent="furnitures" unique_id=454486163]
 

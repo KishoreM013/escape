@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dop04vq3h2r7w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
-size = Vector3(0.5, 72, 4)
+size = Vector3(0.5, 60, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
 transparency = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_nwie6"]
 material = SubResource("StandardMaterial3D_u4w4k")
-size = Vector3(0.5, 71, 3)
+size = Vector3(0.5, 59, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(0.5, 59, 3)
 
 [node name="elevator-mirror" type="CSGMesh3D" unique_id=824410353]
 use_collision = true
@@ -17,3 +20,8 @@ mesh = SubResource("BoxMesh_u4w4k")
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=1470081438]
 operation = 2
 mesh = SubResource("BoxMesh_nwie6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1167968020]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=16990574]
+shape = SubResource("BoxShape3D_q7v43")

@@ -15,10 +15,16 @@ var tween: Tween
 
 
 func _ready() -> void:
+	add_to_group("resettable")
 	start_pos = position
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 
+func reset_state() -> void:
+	if tween:
+		tween.kill()
+	moved = false
+	position = start_pos
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

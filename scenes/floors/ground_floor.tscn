@@ -15,13 +15,19 @@
 [ext_resource type="PackedScene" uid="uid://e8wd83xxbmlm" path="res://scenes/furnitures/welcome_name.tscn" id="12_c4d1a"]
 [ext_resource type="PackedScene" uid="uid://dhto2d0k254ub" path="res://scenes/floors/components/barrier.tscn" id="13_yam7j"]
 [ext_resource type="PackedScene" uid="uid://stpbp8on3u76" path="res://scenes/furnitures/round_table.tscn" id="14_5hqkx"]
+[ext_resource type="PackedScene" uid="uid://cvupfh1r4dq6k" path="res://scenes/furnitures/movable_drawer_table.tscn" id="14_m3mxs"]
 [ext_resource type="PackedScene" uid="uid://iiibsldcmtqk" path="res://scenes/furnitures/drawer_table.tscn" id="15_l2l3j"]
+[ext_resource type="PackedScene" uid="uid://cche7kh7xsqwo" path="res://scenes/furnitures/u_shape_desk.tscn" id="15_ne4mi"]
 [ext_resource type="PackedScene" uid="uid://dh1s387uf2duv" path="res://assets/models/props2/cannon.glb" id="15_xfub2"]
 [ext_resource type="Texture2D" uid="uid://c486mo60172df" path="res://assets/textures/props/brick-wall.jpg" id="16_m3mxs"]
 [ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="17_7bmoj"]
 [ext_resource type="PackedScene" uid="uid://dfrnphblnxs84" path="res://scenes/building-materials/fence/fence_8b.tscn" id="17_gese2"]
 [ext_resource type="PackedScene" uid="uid://dpy56uanmvlc5" path="res://scenes/floors/components/exit_room.tscn" id="18_5f6ut"]
 [ext_resource type="PackedScene" uid="uid://dcud3yxka8k08" path="res://scenes/furnitures/sofa.tscn" id="19_y3fkq"]
+[ext_resource type="PackedScene" uid="uid://uwpo6ibt40dl" path="res://scenes/building-materials/restroom.tscn" id="25_w4hou"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+size = Vector3(7, 1, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
 size = Vector3(0.5, 4, 8)
@@ -41,6 +47,11 @@ radius = 1.1655273
 [node name="ground_floor" type="Node3D" unique_id=1091627154]
 
 [node name="floor" parent="." unique_id=1945902289 instance=ExtResource("1_hvabj")]
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="floor" unique_id=592374508]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.795807, 0, 42.50509)
+operation = 2
+mesh = SubResource("BoxMesh_u4w4k")
 
 [node name="wall" type="Node3D" parent="." unique_id=1036280165]
 
@@ -131,13 +142,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3862915, 42.374527)
 [node name="fence_8b2" parent="fences" unique_id=2123477973 instance=ExtResource("17_gese2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.3862915, 27.86705)
 
-[node name="Exit-room" parent="." unique_id=711907381 instance=ExtResource("18_5f6ut")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 18.092896, 6.2472534, -32.23816)
-
 [node name="furnitures" type="Node3D" parent="." unique_id=505552722]
-
-[node name="chair" parent="furnitures" unique_id=1942027443 instance=ExtResource("7_84ty1")]
-transform = Transform3D(-0.27660015, 0, -0.9609851, 0, 1, 0, 0.9609851, 0, -0.27660015, 10.195923, 1, -35.173523)
 
 [node name="tables" type="Node3D" parent="furnitures" unique_id=1483759153]
 transform = Transform3D(-8.742278e-08, 0, -2, 0, 2, 0, 2, 0, -8.742278e-08, 10.849457, 2.617981, -34.807693)
@@ -154,8 +159,8 @@ transform = Transform3D(-2.5, 0, -2.1855695e-07, 0, 2.5, 0, 2.1855695e-07, 0, -2
 [node name="chair" parent="furnitures/tables/round-table" unique_id=1738490553 instance=ExtResource("7_84ty1")]
 transform = Transform3D(-0.13782588, 0, 0.26646578, 0, 0.3, 0, -0.26646578, 0, -0.13782588, 0.015863795, 0, 0.13970995)
 
-[node name="drawer_table3" parent="furnitures/tables" unique_id=482428873 instance=ExtResource("15_l2l3j")]
-transform = Transform3D(0.0021786236, 0, -0.9999976, 0, 1, 0, 0.9999976, 0, 0.0021786236, 38.658, 0.024999976, 19.751503)
+[node name="movable_drawer_table" parent="furnitures/tables" unique_id=1084527516 instance=ExtResource("14_m3mxs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 38.62372, -0.06967163, 19.530598)
 
 [node name="sofa" parent="furnitures" unique_id=1608281330 instance=ExtResource("19_y3fkq")]
 transform = Transform3D(5, 0, 0, 0, -5, 7.54979e-07, 0, -7.54979e-07, -5, -13.545588, 1.6992493, 29.438442)
@@ -163,20 +168,40 @@ transform = Transform3D(5, 0, 0, 0, -5, 7.54979e-07, 0, -7.54979e-07, -5, -13.54
 [node name="sofa2" parent="furnitures" unique_id=614545345 instance=ExtResource("19_y3fkq")]
 transform = Transform3D(5, 0, 0, 0, -5, 7.54979e-07, 0, -7.54979e-07, -5, -25.133888, 1.6992493, 29.655415)
 
-[node name="chair2" parent="furnitures" unique_id=267958636 instance=ExtResource("7_84ty1")]
+[node name="u_shape_desk" parent="furnitures" unique_id=629106429 instance=ExtResource("15_ne4mi")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.47937, 2.6124268, -24.724041)
+
+[node name="chairs" type="Node3D" parent="furnitures" unique_id=1957931637]
+
+[node name="chair" parent="furnitures/chairs" unique_id=1942027443 instance=ExtResource("7_84ty1")]
+transform = Transform3D(-0.27660015, 0, -0.9609851, 0, 1, 0, 0.9609851, 0, -0.27660015, 10.195923, 1, -35.173523)
+
+[node name="chair2" parent="furnitures/chairs" unique_id=267958636 instance=ExtResource("7_84ty1")]
 transform = Transform3D(-0.29043272, 0, 0.9568954, 0, 1, 0, -0.9568954, 0, -0.29043272, 10.195923, 1, 27.475586)
 
-[node name="chair3" parent="furnitures" unique_id=1049137056 instance=ExtResource("7_84ty1")]
+[node name="chair3" parent="furnitures/chairs" unique_id=1049137056 instance=ExtResource("7_84ty1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.195923, 1, 32.075775)
 
-[node name="chair4" parent="furnitures" unique_id=2120763969 instance=ExtResource("7_84ty1")]
+[node name="chair4" parent="furnitures/chairs" unique_id=2120763969 instance=ExtResource("7_84ty1")]
 transform = Transform3D(-0.3219607, 0, 0.946753, 0, 1, 0, -0.946753, 0, -0.3219607, 28.295776, 1, 14.375488)
 
-[node name="chair5" parent="furnitures" unique_id=1945771998 instance=ExtResource("7_84ty1")]
+[node name="chair5" parent="furnitures/chairs" unique_id=1945771998 instance=ExtResource("7_84ty1")]
 transform = Transform3D(-0.46301708, 0, 0.8863494, 0, 1, 0, -0.8863494, 0, -0.46301708, 24.815674, 1, 15.147095)
 
-[node name="chair6" parent="furnitures" unique_id=792113190 instance=ExtResource("7_84ty1")]
+[node name="chair6" parent="furnitures/chairs" unique_id=792113190 instance=ExtResource("7_84ty1")]
 transform = Transform3D(-0.16732205, 0, -0.9859023, 0, 1, 0, 0.9859023, 0, -0.16732205, 10.195923, 1, -38.95758)
+
+[node name="chair7" parent="furnitures/chairs" unique_id=1116751753 instance=ExtResource("7_84ty1")]
+transform = Transform3D(0.7528755, 0, -0.65816283, 0, 1, 0, 0.65816283, 0, 0.7528755, 17.895996, 1, -31.245972)
+
+[node name="chair8" parent="furnitures/chairs" unique_id=2064257192 instance=ExtResource("7_84ty1")]
+transform = Transform3D(0.9945122, 0, 0.10462028, 0, 1, 0, -0.10462028, 0, 0.9945122, 12.154175, 1, -26.918335)
+
+[node name="chair9" parent="furnitures/chairs" unique_id=1209349447 instance=ExtResource("7_84ty1")]
+transform = Transform3D(0.18706688, 0, 0.9823472, 0, 1, 0, -0.9823472, 0, 0.18706688, 12.154175, 1, -21.822632)
+
+[node name="chair10" parent="furnitures/chairs" unique_id=214292029 instance=ExtResource("7_84ty1")]
+transform = Transform3D(-0.67094314, 0, 0.74150884, 0, 1, 0, -0.74150884, 0, -0.67094314, 18.535767, 1, -18.398224)
 
 [node name="decoration" type="Node3D" parent="." unique_id=1127786904]
 
@@ -222,5 +247,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.109701, 0.7880151, 3.94824
 
 [node name="shelf-round2" parent="decoration" unique_id=1509219817 instance=ExtResource("9_mjhff")]
 transform = Transform3D(-0.59466755, 0, 1.3770877, 0, 1, 0, -1.3770877, 0, -0.59466755, 14.306461, 0.4604187, 36.506805)
+
+[node name="Label3D" type="Label3D" parent="decoration" unique_id=640028604]
+transform = Transform3D(-0.0055483733, 0, 0.9999846, 0, 1, 0, -0.9999846, 0, -0.0055483733, -37.064514, 8.039337, -4.100128)
+pixel_size = 0.02
+text = "Notice
+
+You
+
+You are a salvage diver who lost everything when the harbor flooded. Your debts are due, and your boat is gone. One night, an old sailor hands you a rusted map of Harbor Tower and says one thing: “The compass will save you, but the tower won’t let you leave without paying its toll.”
+
+You walk in, and the doors lock behind you."
+
+[node name="restroom" type="Node3D" parent="." unique_id=1369769629]
+
+[node name="Exit-room" parent="restroom" unique_id=711907381 instance=ExtResource("18_5f6ut")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 34.666138, 6.2472534, -32.23816)
+
+[node name="restroom" parent="restroom" unique_id=1844418416 instance=ExtResource("25_w4hou")]
+transform = Transform3D(-0.99996406, 0, 0.008478628, 0, 1, 0, -0.008478628, 0, -0.99996406, 34.62915, 6.2387695, -38.78157)
+
+[node name="restroom2" parent="restroom" unique_id=538469532 instance=ExtResource("25_w4hou")]
+transform = Transform3D(-0.99996406, 0, 0.008478628, 0, 1, 0, -0.008478628, 0, -0.99996406, 34.62915, 6.2387695, -45.417854)
 
 [editable path="decoration/cannon2"]

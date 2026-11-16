@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://br3bv6wpootdm"]
+
+[sub_resource type="Gradient" id="Gradient_esqh0"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rf2my"]
+gradient = SubResource("Gradient_esqh0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h50ui"]
+albedo_texture = SubResource("GradientTexture1D_rf2my")
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_h50ui")
+size = Vector3(2.5, 0.6, 1.3)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_imtvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x37wp"]
+albedo_texture = SubResource("CompressedTexture2D_imtvq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_esqh0"]
+material = SubResource("StandardMaterial3D_x37wp")
+size = Vector3(1.5, 0.6, 1.3)
+
+[node name="sun_lounger" type="Node3D" unique_id=267849551]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=309147930]
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1511813540]
+transform = Transform3D(0.5998453, 0.800116, 0, -0.800116, 0.5998453, 0, 0, 0, 1, -1.4390622, 0.49877417, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_esqh0")

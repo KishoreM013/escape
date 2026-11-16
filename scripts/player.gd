@@ -3,11 +3,16 @@ extends CharacterBody3D
 const SPEED = 10.0
 const JUMP_VELOCITY = 5
 const MOUSE_SENSITIVITY = 0.003
-	
+
+var start_transform: Transform3D
+
 @onready var head: Node3D = $head
+
 
 func _ready() -> void:
 	add_to_group("player")
+	add_to_group("resettable")
+	start_transform = global_transform
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -22,7 +27,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.pressed and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
 
 
 func _physics_process(delta: float) -> void:
@@ -31,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -41,3 +46,9 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func reset_state() -> void:
+	global_transform = start_transform
+	velocity = Vector3.ZERO
+	head.rotation = Vector3.ZERO

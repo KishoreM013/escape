@@ -1,13 +1,15 @@
 [gd_scene format=3 uid="uid://cn0h6as7tkw0u"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="1_gq70a"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_u4w4k"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oknua"]
+albedo_texture = ExtResource("1_gq70a")
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1062024393]
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+material = SubResource("StandardMaterial3D_oknua")
+size = Vector3(1, 0.5, 8)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1635268826]
-shape = SubResource("BoxShape3D_q7v43")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=541174618]
-mesh = SubResource("BoxMesh_u4w4k")
+[node name="CSGMesh3D" type="CSGMesh3D" unique_id=1914804752]
+transform = Transform3D(-0.0060639447, 0, 0.99998164, 0, 1, 0, -0.99998164, 0, -0.0060639447, 0, 0, 0)
+use_collision = true
+mesh = SubResource("BoxMesh_q7v43")

@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bexdjbamg010j"]
+
+[ext_resource type="Texture2D" uid="uid://c0djdejhoeis7" path="res://assets/textures/construction-metrials/marble-stone.jpg" id="1_r42xl"]
+[ext_resource type="Texture2D" uid="uid://dhxd0ygy1p7gl" path="res://assets/textures/construction-metrials/elevator-moving-platform-textures.jpg" id="2_uqj31"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xiiso"]
+albedo_texture = ExtResource("1_r42xl")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_q7v43"]
+radial_steps = 20
+sections = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u4w4k"]
+top_radius = 0.4
+height = 0.4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nwie6"]
+seamless = true
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4w4k"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+albedo_color = Color(1, 0.1882353, 1, 1)
+roughness = 0.0
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_nwie6")
+refraction_enabled = true
+refraction_texture = SubResource("NoiseTexture2D_nwie6")
+uv1_scale = Vector3(0.01, 0.01, 0.01)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q7v43"]
+material = SubResource("StandardMaterial3D_u4w4k")
+top_radius = 0.4086914
+bottom_radius = 0.4086914
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_438dd"]
+albedo_texture = ExtResource("2_uqj31")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_rixym"]
+radius = 0.6
+radial_steps = 20
+sections = 2
+section_length = 0.15
+
+[node name="pool" type="Node3D" unique_id=1379656600]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=418894603]
+material_override = SubResource("StandardMaterial3D_xiiso")
+use_collision = true
+mesh = SubResource("TubeTrailMesh_q7v43")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="CSGMesh3D" unique_id=1939525598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0059509277, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_u4w4k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CSGMesh3D" unique_id=1351135797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.088256836, 0)
+mesh = SubResource("CylinderMesh_q7v43")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1578055475]
+transform = Transform3D(1, 0, 0, 0, 0.69559515, 0, 0, 0, 1, 0, -0.09470749, 0)
+material_override = SubResource("StandardMaterial3D_438dd")
+use_collision = true
+mesh = SubResource("TubeTrailMesh_rixym")

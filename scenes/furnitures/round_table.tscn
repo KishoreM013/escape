@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://stpbp8on3u76"]
 
 [ext_resource type="Texture2D" uid="uid://suqcmkhqkkg0" path="res://assets/textures/furnitures/welcome-table-texture.jpg" id="1_w2cql"]
+[ext_resource type="Texture2D" uid="uid://cnejqefr6xl6e" path="res://assets/textures/construction-metrials/bamboo-texture-image.jpg" id="2_0fjwa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpy1e"]
+albedo_texture = ExtResource("1_w2cql")
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_u4w4k"]
 radius = 1.0
@@ -19,10 +23,14 @@ radius = 0.8
 radial_steps = 20
 section_length = 0.1
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fwtg"]
+albedo_texture = ExtResource("2_0fjwa")
+
 [sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
 size = Vector3(2, 1, 0.5)
 
 [node name="round-table" type="CSGMesh3D" unique_id=1114444706]
+material_override = SubResource("StandardMaterial3D_tpy1e")
 use_collision = true
 mesh = SubResource("TubeTrailMesh_u4w4k")
 material = SubResource("StandardMaterial3D_0fjwa")
@@ -37,5 +45,6 @@ operation = 2
 mesh = SubResource("TubeTrailMesh_p67wl")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=751218522]
+material_override = SubResource("StandardMaterial3D_7fwtg")
 operation = 2
 mesh = SubResource("BoxMesh_q7v43")

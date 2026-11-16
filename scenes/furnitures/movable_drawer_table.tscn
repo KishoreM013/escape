@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cvupfh1r4dq6k"]
+
+[ext_resource type="Script" uid="uid://bs4toq1pauuas" path="res://scripts/movable_drawer_table.gd" id="1_dvwyk"]
+[ext_resource type="PackedScene" uid="uid://iiibsldcmtqk" path="res://scenes/furnitures/drawer_table.tscn" id="2_i3pgg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7v43"]
+size = Vector3(3.637268, 1.2329102, 1.4696045)
+
+[node name="movable_drawer_table" type="Node3D" unique_id=1084527516]
+script = ExtResource("1_dvwyk")
+distance = 1.0
+
+[node name="drawer_table" parent="." unique_id=1027903129 instance=ExtResource("2_i3pgg")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1611619969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4664222)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=860310885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037261963, 0.11645508, 0.23480225)
+shape = SubResource("BoxShape3D_q7v43")

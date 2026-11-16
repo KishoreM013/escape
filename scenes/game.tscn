@@ -4,8 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://tj2e4nhlxb1a" path="res://scenes/floors/ground_floor.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://m0tendpry5yc" path="res://scenes/floors/first_floor.tscn" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm5d8a0qmm44y" path="res://scenes/player.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c45n8bhdkf015" path="res://scenes/building-materials/secret_room_top.tscn" id="3_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cxck1jvcfdl03" path="res://scenes/floors/second_floor.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://r7w6iqp107mq" path="res://scenes/building-materials/secret_room_side.tscn" id="5_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://crww00n206cu6" path="res://scenes/floors/third_floor(game).tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://c7u1wisvl5srq" path="res://scenes/floors/terrace.tscn" id="6_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c7lv0emrapb4q" path="res://scenes/key.tscn" id="10_dinhu"]
+[ext_resource type="Script" uid="uid://rwwlmtpw3ndt" path="res://scenes/key_pickup.gd" id="10_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://uor2u1g77q7m" path="res://scenes/props/plant.tscn" id="11_kvuet"]
+[ext_resource type="Script" uid="uid://dt5528voo662m" path="res://scripts/secret_plant.gd" id="11_trtic"]
+[ext_resource type="Script" uid="uid://b1ngh2chl3ohh" path="res://scenes/hud.gd" id="12_dinhu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q7v43"]
+height = 2.7725976
+radius = 0.70751953
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u4w4k"]
+radius = 1.1650391
+
+[sub_resource type="Environment" id="Environment_q7v43"]
+background_mode = 1
+background_color = Color(0.47397572, 0.47397572, 0.47397572, 1)
+background_energy_multiplier = 2.25
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.5
 
 [node name="game" type="Node3D" unique_id=191775260]
 
@@ -14,19 +36,143 @@
 [node name="floors" type="Node3D" parent="." unique_id=839943620]
 
 [node name="ground_floor" parent="floors" unique_id=1091627154 instance=ExtResource("2_lnu2h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25181723, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.252, 0)
+
+[node name="secret_room" type="Node3D" parent="floors/ground_floor" unique_id=421588069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.750275, 0)
+
+[node name="secret_room_top" parent="floors/ground_floor/secret_room" unique_id=793610653 instance=ExtResource("3_vtaks")]
+transform = Transform3D(-0.012005919, 0, 0.99992794, 0, 1, 0, -0.99992794, 0, -0.012005919, -21.74833, -20.262472, 42.275024)
+
+[node name="Area3D3" type="Area3D" parent="floors/ground_floor/secret_room" unique_id=1674479254]
+transform = Transform3D(-0.059168614, 0, -0.998248, 0, 1, 0, 0.998248, 0, -0.059168614, -17.231583, -19.913404, 41.832985)
+script = ExtResource("10_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/ground_floor/secret_room/Area3D3" unique_id=1485355777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10144043, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="key" parent="floors/ground_floor/secret_room/Area3D3/CollisionShape3D" unique_id=593482694 instance=ExtResource("10_dinhu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.8333435, 0.57318115, -0.06479645)
 
 [node name="first_floor" parent="floors" unique_id=1905048081 instance=ExtResource("3_lbhrr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.75, 0)
+
+[node name="secret_room_top" parent="floors/first_floor" unique_id=1945806860 instance=ExtResource("5_kvpfn")]
+transform = Transform3D(-0.0054922267, 0, 0.9999849, 0, 1, 0, -0.9999849, 0, -0.0054922267, -47.71865, 5.389759, 15.631654)
+
+[node name="Area3D" type="Area3D" parent="floors/first_floor/secret_room_top" unique_id=1773290188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14315796, 0.15300941, 3.491806)
+script = ExtResource("10_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/first_floor/secret_room_top/Area3D" unique_id=1627170872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10144043, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="key" parent="floors/first_floor/secret_room_top/Area3D/CollisionShape3D" unique_id=561031254 instance=ExtResource("10_dinhu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.8333435, 0.57318115, -0.06479645)
+
+[node name="Area3D3" type="Area3D" parent="floors/first_floor" unique_id=1950614335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.686584, 3.1979218, -30.435387)
+script = ExtResource("10_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/first_floor/Area3D3" unique_id=1498100652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10144043, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="key" parent="floors/first_floor/Area3D3/CollisionShape3D" unique_id=1538663382 instance=ExtResource("10_dinhu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.8333435, 0.57318115, -0.06479645)
 
 [node name="second_floor" parent="floors" unique_id=1229451267 instance=ExtResource("4_iywne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.75, 0)
 
 [node name="third_floor(game)" parent="floors" unique_id=1316253961 instance=ExtResource("5_p57ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.75, 0)
+
+[node name="Area3D2" type="Area3D" parent="floors/third_floor(game)" unique_id=495501216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.404114, 4.0921783, 38.563698)
+script = ExtResource("10_kvpfn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/third_floor(game)/Area3D2" unique_id=383922054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0467529, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="key" parent="floors/third_floor(game)/Area3D2/CollisionShape3D" unique_id=185273906 instance=ExtResource("10_dinhu")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.8333435, 0.57318115, -0.06479645)
+
+[node name="terrace" parent="floors" unique_id=1925072872 instance=ExtResource("6_u5sy4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.36438, 0)
+
+[node name="secret_plant" type="Node3D" parent="floors/terrace" unique_id=1124772632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.381073, 1.1959229, -6.109436)
+script = ExtResource("11_trtic")
+
+[node name="Plant" parent="floors/terrace/secret_plant" unique_id=1267224950 instance=ExtResource("11_kvuet")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="floors/terrace/secret_plant" unique_id=2119825231]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/terrace/secret_plant/Area3D" unique_id=1483037583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4375, 0)
+shape = SubResource("CylinderShape3D_u4w4k")
+
+[node name="HiddenKey" type="Area3D" parent="floors/terrace/secret_plant" unique_id=1432005106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009216309, 0.68507385, 0.18634796)
+script = ExtResource("10_kvpfn")
+
+[node name="key" parent="floors/terrace/secret_plant/HiddenKey" unique_id=1830803278 instance=ExtResource("10_dinhu")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.3717804, -0.47357178, -0.06479645)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floors/terrace/secret_plant/HiddenKey" unique_id=189169149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.47064972, 0)
+shape = SubResource("CylinderShape3D_q7v43")
+
+[node name="Plant" parent="floors/terrace" unique_id=1416236020 instance=ExtResource("11_kvuet")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.1444092, 6.3680573)
+
+[node name="Plant2" parent="floors/terrace" unique_id=1852690197 instance=ExtResource("11_kvuet")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.255081, 1.1973877, -0.12168884)
 
 [node name="player" parent="." unique_id=1521365658 instance=ExtResource("3_lnu2h")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -23.084343, 0.24184489, 0.26794434)
 
-[node name="sun" type="DirectionalLight3D" parent="." unique_id=319150172]
-transform = Transform3D(-0.52663845, 0.7503845, -0.39946827, 0.054162838, 0.49857733, 0.8651514, 0.8483621, 0.43398562, -0.30321297, 0, 0, 0)
+[node name="keys" type="Node3D" parent="." unique_id=511765932]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1628211426]
+process_mode = 3
+script = ExtResource("12_dinhu")
+
+[node name="Label" type="Label" parent="HUD" unique_id=1180284373]
+offset_right = 148.0
+offset_bottom = 60.0
+
+[node name="WinLabel" type="Label" parent="HUD" unique_id=2053121542]
+offset_left = 517.0
+offset_top = 307.0
+offset_right = 586.0
+offset_bottom = 330.0
+text = "You Won"
+
+[node name="RestartButton" type="Button" parent="HUD" unique_id=1880897382]
+offset_left = 509.0
+offset_top = 399.0
+offset_right = 597.0
+offset_bottom = 430.0
+text = "Play Again
+"
+
+[node name="Controls" type="Label" parent="HUD" unique_id=1833710958]
+offset_left = 945.0
+offset_top = 459.0
+offset_right = 1148.0
+offset_bottom = 638.0
+text = "W A S D  -  Move
+Mouse  -  Look
+Space  -  Jump
+F  -  Open doors
+M  -  Move objects
+U / L  -  Elevator up / down
+Esc  -  Free mouse"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1175925556]
+environment = SubResource("Environment_q7v43")

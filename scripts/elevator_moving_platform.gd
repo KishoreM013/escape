@@ -14,6 +14,7 @@ var tween: Tween
 
 
 func _ready() -> void:
+	add_to_group("resettable")
 	start_y = position.y
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
@@ -48,3 +49,10 @@ func go_to_floor(target: int) -> void:
 	tween.tween_property(self, "position:y", start_y + target * floor_height, move_time) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_callback(func(): moving = false)
+
+func reset_state() -> void:
+	if tween:
+		tween.kill()
+	moving = false
+	current_floor = 0
+	position.y = start_y

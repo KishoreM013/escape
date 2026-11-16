@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" uid="uid://dh0ji5uudam65" path="res://scenes/furnitures/components/small_circle_table.tscn" id="19_q7psa"]
 [ext_resource type="PackedScene" uid="uid://crv5rxoh20ltf" path="res://scenes/building-materials/kitchen_slab.tscn" id="22_dilqw"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
+size = Vector3(0.8, 9, 4)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3mxs"]
 albedo_texture = ExtResource("5_0mq22")
 
@@ -38,9 +41,6 @@ size = Vector3(0.5, 12, 37)
 [sub_resource type="BoxMesh" id="BoxMesh_kon7b"]
 material = SubResource("StandardMaterial3D_m3mxs")
 size = Vector3(0.5, 12, 18.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_q7v43"]
-size = Vector3(0.5, 9, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h75w6"]
 size = Vector3(0.5, 9, 4)
@@ -64,6 +64,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 6
 [node name="wall_175" parent="side-wall" unique_id=1524504558 instance=ExtResource("3_fnp88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.5, 6, -0.116)
 
+[node name="CSGMesh3D" type="CSGMesh3D" parent="side-wall/wall_175" unique_id=281429964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0073242, 15.353699)
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="door" parent="side-wall/wall_175/CSGMesh3D" unique_id=2107742513 instance=ExtResource("6_kon7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099965096, -0.14880371, 2.0426753)
+
 [node name="wall_176" parent="side-wall" unique_id=834323323 instance=ExtResource("3_fnp88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 6, 0)
 
@@ -74,6 +82,14 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25,
 
 [node name="room-walls2" parent="side-wall/room-split-walls" unique_id=1223815898 instance=ExtResource("4_fnp88")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 6, 0)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="side-wall/room-split-walls/room-walls2" unique_id=93208843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03710523, -1.0073242, 7.5788574)
+operation = 2
+mesh = SubResource("BoxMesh_q7v43")
+
+[node name="door" parent="side-wall/room-split-walls/room-walls2/CSGMesh3D" unique_id=1977676318 instance=ExtResource("6_kon7b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049677134, -0.14880371, 2.042675)
 
 [node name="room-walls3" parent="side-wall/room-split-walls" unique_id=443721630 instance=ExtResource("4_fnp88")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 6, 31.359138)
@@ -92,7 +108,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0073242, 0)
 operation = 2
 mesh = SubResource("BoxMesh_q7v43")
 
-[node name="door" parent="side-wall/room-split-walls/room-walls5/CSGMesh3D" unique_id=2107742513 instance=ExtResource("6_kon7b")]
+[node name="door" parent="side-wall/room-split-walls/room-walls5/CSGMesh3D" unique_id=822261137 instance=ExtResource("6_kon7b")]
 transform = Transform3D(-1, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, -1, -0.046118736, -0.14880371, -2.0675404)
 
 [node name="room-walls6" parent="side-wall/room-split-walls" unique_id=1274120090 instance=ExtResource("4_fnp88")]
@@ -233,17 +249,17 @@ transform = Transform3D(5, 0, 0, 0, -5, 7.54979e-07, 0, -7.54979e-07, -5, 22.973
 
 [node name="cupboards" type="Node3D" parent="furnitures" unique_id=1555770809]
 
-[node name="cupboard3" parent="furnitures/cupboards" unique_id=789890658 instance=ExtResource("12_abpss")]
+[node name="fake_cupboard3" parent="furnitures/cupboards" unique_id=789890658 instance=ExtResource("12_abpss")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.0444336, 5.2423096, -19.362549)
 
 [node name="cupboard" parent="furnitures/cupboards" unique_id=930178165 instance=ExtResource("19_3dxro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.403473, 5.0266113, 15.23703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.497498, 5.0266113, 15.23703)
 
-[node name="cupboard2" parent="furnitures/cupboards" unique_id=674677448 instance=ExtResource("12_abpss")]
+[node name="fake _cupboard2" parent="furnitures/cupboards" unique_id=674677448 instance=ExtResource("12_abpss")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.136536, 5.2423096, -19.362549)
 
 [node name="cupboard4" parent="furnitures/cupboards" unique_id=265068466 instance=ExtResource("19_3dxro")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.597, 5, 1)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.60533, 5, 1.0810547)
 
 [node name="kitchen_cupboards" type="Node3D" parent="furnitures" unique_id=297435293]
 

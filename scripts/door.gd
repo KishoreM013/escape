@@ -9,6 +9,7 @@ var tween: Tween
 
 
 func _ready() -> void:
+	add_to_group("resettable")
 	$Area3D.body_entered.connect(_on_body_entered)
 	$Area3D.body_exited.connect(_on_body_exited)
 
@@ -36,3 +37,10 @@ func toggle() -> void:
 	var target := deg_to_rad(open_angle) if is_open else 0.0
 	tween.tween_property($hinge, "rotation:y", target, open_time) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
+func reset_state() -> void:
+	if tween:
+		tween.kill()
+	is_open = false
+	$hinge.rotation.y = 0.0
